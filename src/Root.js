@@ -1,6 +1,5 @@
 import React from 'react';
 import GlobalStyle from './styled/GlobalStyle,';
-import { Button } from 'react-bootstrap';
 
 const loggedIn = true;
 
@@ -13,7 +12,6 @@ function Root() {
       {loggedIn === true
         ? <p>Witaj użytkowniku Łukasz</p>
         : <p>Witaj, nie jesteś zalogowany </p>}
-        <Button></Button>
     </>
   );
 }
