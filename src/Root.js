@@ -1,21 +1,61 @@
 import React, { useContext } from 'react';
-import GlobalStyle from './styled/GlobalStyle,';
-import { LogInContext } from './LogInContext';
-
-const loggedIn = true;
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+import { LoginContext } from './contexts/LoginContext';
+import Home from './pages/Home';
+import About from './pages/About';
+import Dashboard from './pages/Dashboard';
+import ErrorPage from './pages/ErrorPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function Root() {
-  const value = useContext(LogInContext);
+  const value = useContext(LoginContext);
   return (
-    <>
-      <GlobalStyle />
-      {value}
-      <h1>Barki</h1>
-      <h4>Jedyna skuteczna obroża oduczająca wycia, Twojego psiaka</h4>
-      {loggedIn === true
-        ? <p>Witaj użytkowniku Łukasz </p>
-        : <p>Witaj, nie jesteś  </p>}
-    </>
+    <Router>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">O Barki</Link>
+        </li>
+        <li>
+          <Link to="/dashboard">Moja obroża</Link>
+        </li>
+        <li>
+          <Link to="/login">Logowanie</Link>
+        </li>
+        <li>
+          <Link to='/register'>Rejestracja</Link>
+        </li>
+      </ul>
+
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route>
+          <ErrorPage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

@@ -21,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     font-size: 1.2rem;
   }
+
+  ul {
+    color: black;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;
