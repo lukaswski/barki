@@ -1,9 +1,27 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import { auth } from '../firebase/firebaseConfig';
 
 export const LoginContext = createContext();
 
-export const LoginProvider = (props) => (
-  <LoginContext.Provider value="context działa">
-    {props.children}
-  </LoginContext.Provider>
-);
+export const LoginProvider = (props) => {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    uid: '',
+  });
+  // data?.uid, data.displayName, data.email
+  useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged((data) => setUser({
+      name: data.displayName,
+      email: data.email,
+      uid: data.uid,
+    }));
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <LoginContext.Provider value={user}>
+      {props.children}
+    </LoginContext.Provider>
+  );
+};

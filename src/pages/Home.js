@@ -1,5 +1,6 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 export default () => (
-  <div>Home</div>
+  <Container>Home</Container>
 );

@@ -1,10 +1,13 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { authByProvider, FacebookProvider, GoogleProvider } from '../firebase/firebaseConfig';
+import { Button, Container } from 'react-bootstrap';
+import {
+  authByProvider, facebookProvider, googleProvider, logout,
+} from '../firebase/firebaseConfig';
 
 export default () => (
-  <>
-    <Button onClick={() => authByProvider(FacebookProvider)}>Facebook</Button>
-    <Button onClick={() => authByProvider(GoogleProvider)} variant="danger">Google</Button>
-  </>
+  <Container>
+    <Button onClick={() => authByProvider(facebookProvider)}>Facebook</Button>
+    <Button onClick={() => authByProvider(googleProvider)} variant="danger">Google</Button>
+    <Button onClick={() => authByProvider(logout)} variant="dark">wyloguj sie</Button>
+  </Container>
 );
