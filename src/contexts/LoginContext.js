@@ -5,9 +5,6 @@ export const LoginContext = createContext();
 
 export const LoginProvider = (props) => {
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    uid: '',
   });
   // data?.uid, data.displayName, data.email
   useEffect(() => {

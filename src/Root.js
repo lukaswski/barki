@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   // eslint-disable-next-line linebreak-style
   BrowserRouter as Router,
@@ -9,6 +9,7 @@ import {
 import {
   Nav, Navbar, Button, Form,
 } from 'react-bootstrap';
+import { LoginContext } from './contexts/LoginContext';
 import { StyledLink } from './styled/styledComponents';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,8 +17,11 @@ import Dashboard from './pages/Dashboard';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
 import Contact from './pages/Contact';
+import NotLogged from './pages/NotLogged';
 
 function Root() {
+  const value = useContext(LoginContext);
+
   return (
     <Router>
       <Navbar expand="lg">
@@ -43,7 +47,7 @@ function Root() {
           <About />
         </Route>
         <Route path="/dashboard">
-          <Dashboard />
+          {value.name ? <Dashboard /> : <NotLogged />}
         </Route>
         <Route path="/login">
           <Login />
