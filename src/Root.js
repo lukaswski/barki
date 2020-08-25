@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {
+  // eslint-disable-next-line linebreak-style
   BrowserRouter as Router,
   Switch,
   Route,
@@ -38,23 +39,6 @@ function Root() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-      {/* <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">O Barki</Link>
-        </li>
-        <li>
-          <Link to="/dashboard">Moja obroża</Link>
-        </li>
-        <li>
-          <Link to="/login">Logowanie</Link>
-        </li>
-        <li>
-          <Link to='/register'>Rejestracja</Link>
-        </li>
-      </ul> */}
 
       <Switch>
         <Route exact path="/">
