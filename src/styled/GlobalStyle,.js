@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
    margin: 0;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-family: Arial, Helvetica, sans-serif
   }
 
   h1{
