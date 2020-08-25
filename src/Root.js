@@ -16,6 +16,7 @@ import Dashboard from './pages/Dashboard';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Contact from './pages/Contact';
 
 function Root() {
   const value = useContext(LoginContext);
@@ -29,6 +30,7 @@ function Root() {
           <Nav className="mr-auto">
             <StyledLink to="/about">O Barki</StyledLink>
             <StyledLink to="/dashboard">Moja obroża</StyledLink>
+            <StyledLink to="/contact">Kontakt</StyledLink>
           </Nav>
           <Form inline>
             <Link to="/login"><Button variant="outline-success" className="mr-2">Login</Button></Link>
@@ -69,6 +71,9 @@ function Root() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
         <Route>
           <ErrorPage />
