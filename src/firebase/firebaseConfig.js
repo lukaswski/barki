@@ -19,4 +19,12 @@ export const googleProvider = new firebase.auth.GoogleAuthProvider();
 export const logout = firebase.auth().signOut();
 
 export const authByProvider = (provider) => firebase.auth().signInWithPopup(provider);
+
+export const createUserByPassword = (email, password) => (
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+);
+export const authByPassword = (email, password) => (
+  firebase.auth().signInWithEmailAndPassword(email, password)
+);
+
 export const { auth } = firebase;

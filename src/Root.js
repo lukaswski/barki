@@ -30,11 +30,11 @@ function Root() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <StyledLink to="/about">O Barki</StyledLink>
-            <StyledLink to="/dashboard">Moja obroża</StyledLink>
             <StyledLink to="/contact">Kontakt</StyledLink>
           </Nav>
           <Form inline>
-            <Link to="/login"><Button variant="outline-success" className="mr-2">Login</Button></Link>
+            <StyledLink to="/dashboard">Moja obroża</StyledLink>
+            <Link to="/login"><Button variant="outline-success" className="mr-2">Logowanie</Button></Link>
           </Form>
         </Navbar.Collapse>
       </Navbar>
@@ -47,7 +47,7 @@ function Root() {
           <About />
         </Route>
         <Route path="/dashboard">
-          {value.name ? <Dashboard /> : <NotLogged />}
+          {value.email ? <Dashboard /> : <NotLogged />}
         </Route>
         <Route path="/login">
           <Login />
