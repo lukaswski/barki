@@ -15,7 +15,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import ErrorPage from './pages/ErrorPage';
-import Login from './pages/Login';
+import Login from './pages/Login/LoginPage';
 import Contact from './pages/Contact';
 import NotLogged from './pages/NotLogged';
 
