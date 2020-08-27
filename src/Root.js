@@ -24,6 +24,7 @@ import Rules from './pages/Rules';
 function Root() {
   const [value, setValue] = useContext(LoginContext);
   const [registerButton, setRegisterButton] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const handleRegisterClick = () => setRegisterButton(!registerButton);
   const handleLogout = () => (
     setValue({}),
@@ -32,24 +33,24 @@ function Root() {
 
   return (
     <Router>
-      <Navbar expand="lg">
-        <StyledLink to="/" className="logo">Barki Collar</StyledLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar expand="lg" expanded={expanded}>
+        <StyledLink to="/" className="logo" onClick={() => setExpanded(false)}>Barki Collar</StyledLink>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <StyledLink to="/about">O Barki</StyledLink>
-            <StyledLink to="/contact">Kontakt</StyledLink>
+            <StyledLink to="/about" onClick={() => setExpanded(false)}>O Barki</StyledLink>
+            <StyledLink to="/contact" onClick={() => setExpanded(false)}>Kontakt</StyledLink>
           </Nav>
           <Form inline>
-            <StyledLink to="/dashboard">Moja obroża</StyledLink>
-            <Link to="/login">
-              {value.email ? <Button variant="outline-danger" className="mr-2" onClick={handleLogout}>Wyloguj się</Button> : (
-                <Button variant="outline-success" className="mr-2" onClick={handleRegisterClick}>
-                  {registerButton ? 'Rejestracja' : 'Logowanie'}
-                </Button>
-              ) }
-            </Link>
+            <StyledLink to="/dashboard" onClick={() => setExpanded(false)}>Moja obroża</StyledLink>
           </Form>
+          <StyledLink to="/login" onClick={() => setExpanded(false)}>
+            {value.email ? <Button variant="outline-danger" className="mr-2" onClick={handleLogout}>Wyloguj się</Button> : (
+              <Button variant="outline-success" className="mr-2" onClick={handleRegisterClick}>
+                {registerButton ? 'Rejestracja' : 'Logowanie'}
+              </Button>
+            ) }
+          </StyledLink>
         </Navbar.Collapse>
       </Navbar>
 
