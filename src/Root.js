@@ -9,6 +9,7 @@ import {
 import {
   Nav, Navbar, Button, Form,
 } from 'react-bootstrap';
+import firebase from 'firebase/app';
 import { LoginContext } from './contexts/LoginContext';
 import { StyledLink } from './styled/styledComponents';
 import Home from './pages/Home';
@@ -18,11 +19,16 @@ import ErrorPage from './pages/ErrorPage';
 import LoginPage from './pages/Login/LoginPage';
 import Contact from './pages/Contact';
 import NotLogged from './pages/NotLogged';
+import Rules from './pages/Rules';
 
 function Root() {
-  const value = useContext(LoginContext);
+  const [value, setValue] = useContext(LoginContext);
   const [registerButton, setRegisterButton] = useState(false);
   const handleRegisterClick = () => setRegisterButton(!registerButton);
+  const handleLogout = () => (
+    setValue({}),
+    firebase.auth().signOut()
+  );
 
   return (
     <Router>
@@ -37,7 +43,7 @@ function Root() {
           <Form inline>
             <StyledLink to="/dashboard">Moja obroża</StyledLink>
             <Link to="/login">
-              {value.email ? <Button variant="outline-danger" className="mr-2">Wyloguj się</Button> : (
+              {value.email ? <Button variant="outline-danger" className="mr-2" onClick={handleLogout}>Wyloguj się</Button> : (
                 <Button variant="outline-success" className="mr-2" onClick={handleRegisterClick}>
                   {registerButton ? 'Rejestracja' : 'Logowanie'}
                 </Button>
@@ -64,6 +70,9 @@ function Root() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route>
+          <Rules path="/rules" />
         </Route>
         <Route>
           <ErrorPage />

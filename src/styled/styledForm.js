@@ -4,10 +4,12 @@ import { Button, Container } from 'react-bootstrap';
 export const StyledContainer = styled(Container)`
   margin-top: 20px; 
   width: 50vw;
+    @media(max-width: 800px){
+      width: 80vw;
+    }
 `;
 export const StyledButton = styled(Button)`
   margin: 5px auto;
-  width: 100%;
 `;
 export const StyledInput = styled.input`
   margin: 5px auto;

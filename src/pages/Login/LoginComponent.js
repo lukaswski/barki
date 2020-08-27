@@ -4,7 +4,7 @@ import {
  StyledLabel, StyledButton, StyledSpan, StyledInput,
 } from '../../styled/styledForm';
 
-export default ({ name, submitButtonText, handleOnSubmit }) => {
+export default ({ name, submitButtonText, handleOnSubmit, registerAccess }) => {
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
@@ -23,7 +23,7 @@ export default ({ name, submitButtonText, handleOnSubmit }) => {
         <StyledInput name="password" type="password" ref={register({ required: true, minLength: 6 })} />
         {errors.password && <StyledSpan>hasło jest wymagane!</StyledSpan>}
 
-        <StyledButton type="submit" variant="outline-success">{submitButtonText}</StyledButton>
+        <StyledButton block type="submit" variant="outline-success" disabled={registerAccess}>{submitButtonText}</StyledButton>
       </form>
     </div>
   );

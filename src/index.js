@@ -6,11 +6,9 @@ import Root from './Root';
 import GlobalStyle from './styled/GlobalStyle,';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <LoginProvider>
-      <GlobalStyle />
-      <Root />
-    </LoginProvider>
-  </React.StrictMode>,
+  <LoginProvider>
+    <GlobalStyle />
+    <Root />
+  </LoginProvider>,
   document.getElementById('root'),
 );
