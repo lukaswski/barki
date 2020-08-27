@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 import {
   StyledContainer, StyledLabel, StyledButton,
 } from '../../styled/styledForm';
 import {
-  authByProvider, facebookProvider, googleProvider, logout, createUserByPassword, authByPassword,
+  authByProvider, facebookProvider, googleProvider, createUserByPassword, authByPassword,
 } from '../../firebase/firebaseConfig';
 import LoginComponent from './LoginComponent';
 import ResetPasswordModal from './ResetPasswordModal';
 
 export default ({ registerButton }) => {
+  const history = useHistory();
   const [rulesCheckbox, setRulesCheckbox] = useState(true);
   const [dataProcessCheckbox, setDataProcess] = useState(true);
   const [modalShow, setModalShow] = useState(false);
@@ -40,7 +42,7 @@ export default ({ registerButton }) => {
           <StyledButton
             block
             disabled={registerAccess()}
-            onClick={() => authByProvider(facebookProvider)}
+            onClick={() => authByProvider(facebookProvider).then(() => history.push('/dashboard'))}
           >
             Facebook
           </StyledButton>
@@ -49,7 +51,7 @@ export default ({ registerButton }) => {
           <StyledButton
             block
             disabled={registerAccess()}
-            onClick={() => authByProvider(googleProvider)}
+            onClick={() => authByProvider(googleProvider).then(() => history.push('/dashboard'))}
             variant="danger"
           >
             Google

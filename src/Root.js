@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
 import {
   Nav, Navbar, Button, Form,
@@ -25,17 +24,18 @@ function Root() {
   const [value, setValue] = useContext(LoginContext);
   const [registerButton, setRegisterButton] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const handleRegisterClick = () => setRegisterButton(!registerButton);
+  const handleRegisterClick = () => (setRegisterButton(!registerButton));
+
   const handleLogout = () => (
     setValue({}),
-    firebase.auth().signOut()
+    firebase.auth().signOut(),
+    setRegisterButton(true)
   );
-
   return (
     <Router>
       <Navbar expand="lg" expanded={expanded}>
         <StyledLink to="/" className="logo" onClick={() => setExpanded(false)}>Barki Collar</StyledLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : 'expanded')} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <StyledLink to="/about" onClick={() => setExpanded(false)}>O Barki</StyledLink>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import {
  StyledLabel, StyledButton, StyledSpan, StyledInput,
 } from '../../styled/styledForm';
@@ -8,7 +9,9 @@ export default ({ name, submitButtonText, handleOnSubmit, registerAccess }) => {
   const {
     register, handleSubmit, errors,
   } = useForm();
-  const onSubmit = ({ email, password }) => handleOnSubmit(email, password);
+  const history = useHistory();
+
+  const onSubmit = ({ email, password }) => handleOnSubmit(email, password).then(() => history.push('/dashboard'));
   return (
 
     <div>
