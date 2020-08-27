@@ -3,17 +3,16 @@ import { useForm } from 'react-hook-form';
 import {
  StyledLabel, StyledButton, StyledSpan, StyledInput,
 } from '../../styled/styledForm';
-import { authByPassword } from '../../firebase/firebaseConfig';
 
-export default () => {
+export default ({ name, submitButtonText, handleOnSubmit }) => {
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
-  const onSubmit = ({ email, password }) => authByPassword(email, password);
+  const onSubmit = ({ email, password }) => handleOnSubmit(email, password);
   return (
 
     <div>
-      <h2>Logowanie do konta</h2>
+      <h2>{name}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <StyledLabel>Adres email</StyledLabel>
@@ -24,7 +23,7 @@ export default () => {
         <StyledInput name="password" type="password" ref={register({ required: true, minLength: 6 })} />
         {errors.password && <StyledSpan>hasło jest wymagane!</StyledSpan>}
 
-        <StyledButton type="submit" variant="outline-success">Rejestracja</StyledButton>
+        <StyledButton type="submit" variant="outline-success">{submitButtonText}</StyledButton>
       </form>
     </div>
   );

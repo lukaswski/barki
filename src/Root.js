@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   // eslint-disable-next-line linebreak-style
   BrowserRouter as Router,
@@ -15,12 +15,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import ErrorPage from './pages/ErrorPage';
-import Login from './pages/Login/LoginPage';
+import LoginPage from './pages/Login/LoginPage';
 import Contact from './pages/Contact';
 import NotLogged from './pages/NotLogged';
 
 function Root() {
   const value = useContext(LoginContext);
+  const [registerButton, setRegisterButton] = useState(false);
+  const handleRegisterClick = () => setRegisterButton(!registerButton);
 
   return (
     <Router>
@@ -34,7 +36,13 @@ function Root() {
           </Nav>
           <Form inline>
             <StyledLink to="/dashboard">Moja obroża</StyledLink>
-            <Link to="/login"><Button variant="outline-success" className="mr-2">Logowanie</Button></Link>
+            <Link to="/login">
+              {value.email ? <Button variant="outline-danger" className="mr-2">Wyloguj się</Button> : (
+                <Button variant="outline-success" className="mr-2" onClick={handleRegisterClick}>
+                  {registerButton ? 'Rejestracja' : 'Logowanie'}
+                </Button>
+              ) }
+            </Link>
           </Form>
         </Navbar.Collapse>
       </Navbar>
@@ -50,7 +58,9 @@ function Root() {
           {value.email ? <Dashboard /> : <NotLogged />}
         </Route>
         <Route path="/login">
-          <Login />
+          <LoginPage
+            registerButton={registerButton}
+          />
         </Route>
         <Route path="/contact">
           <Contact />

@@ -4,13 +4,26 @@ import {
   StyledContainer, StyledLabel, StyledButton,
 } from '../../styled/styledForm';
 import {
-  authByProvider, facebookProvider, googleProvider, logout
+  authByProvider, facebookProvider, googleProvider, logout, createUserByPassword, authByPassword,
 } from '../../firebase/firebaseConfig';
 import LoginComponent from './LoginComponent';
 
-export default () => (
+export default ({ registerButton }) => (
   <StyledContainer>
-    <LoginComponent />
+    {registerButton
+      ? (
+        <LoginComponent
+          name="Logowanie do konta"
+          submitButtonText="Zaloguj się"
+          handleOnSubmit={authByPassword}
+        />
+      ) : (
+        <LoginComponent
+          name="Rejestracja do konta"
+          submitButtonText="Zarejestruj się"
+          handleOnSubmit={createUserByPassword}
+        />
+      )}
     <hr />
     <StyledLabel>lub poprzez:</StyledLabel>
     <Row xs={1} md={1} className="justify-content-md-center">
