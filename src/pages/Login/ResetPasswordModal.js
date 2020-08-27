@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { StyledButton, StyledInput } from '../../styled/styledForm';
+import { passwordReset } from '../../firebase/firebaseConfig';
+
+const ResetPasswordModal = (props) => {
+  const [PaswordValue, setPaswordValue] = useState();
+
+  const handleResetPassword = (e) => setPaswordValue(e.target.value);
+
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Resetowanie hasła do konta
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>
+          Podaj adres na który chcesz otrzymać link do resetowania hasła
+        </p>
+        <StyledInput name="email" type="email" onChange={handleResetPassword} className="passwordReset" />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={() => passwordReset(PaswordValue)} variant="warning">Resetuj</Button>
+        <Button onClick={props.onHide} variant="outline-danger">Anuluj</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
+
+export default () => {
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <>
+      <StyledButton variant="link" block onClick={() => setModalShow(true)}>
+        resetuj hasło
+      </StyledButton>
+      <ResetPasswordModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
+  );
+};

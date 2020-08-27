@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import {
   StyledContainer, StyledLabel, StyledButton,
 } from '../../styled/styledForm';
@@ -7,10 +7,12 @@ import {
   authByProvider, facebookProvider, googleProvider, logout, createUserByPassword, authByPassword,
 } from '../../firebase/firebaseConfig';
 import LoginComponent from './LoginComponent';
+import ResetPasswordModal from './ResetPasswordModal';
 
 export default ({ registerButton }) => {
   const [rulesCheckbox, setRulesCheckbox] = useState(true);
   const [dataProcessCheckbox, setDataProcess] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
   const registerAccess = () => ((rulesCheckbox || dataProcessCheckbox) && !registerButton);
 
@@ -25,7 +27,7 @@ export default ({ registerButton }) => {
           />
         ) : (
           <LoginComponent
-            name="Rejestracja do konta"
+            name="Rejestracja nowego konta"
             submitButtonText="Zarejestruj się"
             handleOnSubmit={createUserByPassword}
             registerAccess={registerAccess()}
@@ -38,7 +40,8 @@ export default ({ registerButton }) => {
           <StyledButton
             block
             disabled={registerAccess()}
-            onClick={() => authByProvider(facebookProvider)}>
+            onClick={() => authByProvider(facebookProvider)}
+          >
             Facebook
           </StyledButton>
         </Col>
@@ -47,7 +50,8 @@ export default ({ registerButton }) => {
             block
             disabled={registerAccess()}
             onClick={() => authByProvider(googleProvider)}
-            variant="danger">
+            variant="danger"
+          >
             Google
           </StyledButton>
         </Col>
@@ -63,17 +67,19 @@ export default ({ registerButton }) => {
           <label>
             <input type="checkbox" onChange={() => setDataProcess(!dataProcessCheckbox)} />
             {' '}
-            Oświadczam iż zapoznałem się z regulaminem Barki Collar dostępnym
+            Oświadczam, iż zapoznałem się z regulaminem Barki Collar dostępnym
             <a href="/rules"> tutaj </a>
           </label>
         </div>
       ) : (
         <div>
           nie pamiętasz hasła?
-          <StyledButton onClick={()=>alert('resetuj hasło')} variant="link" block>resetuj hasło</StyledButton>
+          <ResetPasswordModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
         </div>
       ) }
-
     </StyledContainer>
   );
 };

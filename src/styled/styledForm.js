@@ -12,14 +12,18 @@ export const StyledButton = styled(Button)`
   margin: 5px auto;
 `;
 export const StyledInput = styled.input`
-  margin: 5px auto;
   height: 40px;
   border: 0;
   border-bottom: 1px solid;
+  padding-left: 10%;
   width: 100%;
     :focus {
       background-color: whitesmoke;
       outline: none;
+    }
+    &.passwordReset {
+      width: 60%;
+      
     }
 `;
 export const StyledLabel = styled.label`
