@@ -13,7 +13,7 @@ import { LoginContext } from './contexts/LoginContext';
 import { StyledLink } from './styled/styledComponents';
 import Home from './pages/Home';
 import About from './pages/About';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
 import ErrorPage from './pages/ErrorPage';
 import LoginPage from './pages/Login/LoginPage';
 import Contact from './pages/Contact';

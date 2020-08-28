@@ -25,10 +25,6 @@ export const StyledInput = styled.input`
     &.password{
       margin-bottom: 50px;
     }
-    &.passwordReset {
-      width: 60%;
-    }
-    
 `;
 export const StyledLabel = styled.label`
   margin: 10px auto;
