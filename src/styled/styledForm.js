@@ -4,8 +4,8 @@ import { Button, Container } from 'react-bootstrap';
 export const StyledContainer = styled(Container)`
   margin-top: 20px; 
   width: 50vw;
-    @media(max-width: 800px){
-      width: 80vw;
+    @media(max-width: 830px){
+      width: 100vw;
     }
 `;
 export const StyledButton = styled(Button)`
@@ -17,18 +17,23 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid;
   padding-left: 10%;
   width: 100%;
+  margin-top: 30px;
     :focus {
       background-color: whitesmoke;
       outline: none;
     }
+    &.password{
+      margin-bottom: 50px;
+    }
     &.passwordReset {
       width: 60%;
-      
     }
+    
 `;
 export const StyledLabel = styled.label`
   margin: 10px auto;
   color: grey;
+  width:100%;
 `;
 export const StyledSpan = styled.div`
   margin: 5px auto;

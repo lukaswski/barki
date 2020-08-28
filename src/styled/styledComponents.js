@@ -10,10 +10,9 @@ export const StyledLink = styled(Link)`
     color: black;
   }
     &.logo{
-      font-size: 1.8em;
+      font-size: 1.4rem;
       color: black;
       letter-spacing: 2px;
       font-weight: 500;
-      margin-right: 5%;
     }
 `;
