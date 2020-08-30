@@ -4,8 +4,13 @@ import FirstLogin from './FirstLogin';
 
 export default () => {
   const { userData } = useContext(LoginContext);
-  const [userDataValue] = userData;
+
+  const [ userDataValue, setUserDataValue ] = userData;
+  console.log(userDataValue);
   return (
-    <FirstLogin />
+    <>
+      {userDataValue.userName}
+      <FirstLogin />
+    </>
   );
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Jumbotron } from 'react-bootstrap';
 
 export const StyledContainer = styled(Container)`
   margin-top: 20px; 
@@ -35,4 +35,21 @@ export const StyledSpan = styled.div`
   margin: 5px auto;
   color: red;
   font-size: 15px;
+`;
+
+export const StyledJumbotron = styled(Jumbotron)`
+  align-items: center;
+  width: 49%;
+  float: left;
+  &.first{
+    width:100%;
+  };
+  &.third{
+    margin-left: 2%;
+  };
+  @media(max-width: 768px){
+    width:100%;
+    &.third{
+    margin-left: 0;
+  }
 `;
