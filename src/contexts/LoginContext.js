@@ -26,7 +26,7 @@ export const LoginProvider = (props) => {
       email: data.email,
       uid: data.uid,
     },
-    writeDatabase(data.displayName, data.email, data.uid),
+    data.displayName.length < 0 && writeDatabase(data.displayName, data.email, data.uid),
     readDatabase(data.displayName, data.uid)));
     return () => unsubscribe();
   }, []);
