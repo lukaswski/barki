@@ -12,13 +12,15 @@ export default () => (
       Witaj w Barki!
     </h2>
     {DASHBOARD_CARD_CONTENT.map(({
-      head, content, button, key,
+      head, content, content1, button, key,
     }) => (
       <Col sm key={key}>
         <StyledJumbotron className={key}>
           <h3>{head}</h3>
           <hr />
           <p>{content}</p>
+          <p>{content1}</p>
+          <hr />
           <p><ModalForm buttonName={button} /></p>
         </StyledJumbotron>
       </Col>

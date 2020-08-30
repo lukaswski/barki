@@ -10,9 +10,9 @@ export default ({ buttonName }) => {
 
   return (
     <>
-      <Button variant="outline-primary" block onClick={() => setShow(true)}>
+      <StyledButton className="DashboardCardButton" variant="outline-primary" block onClick={() => setShow(true)}>
         {buttonName}
-      </Button>
+      </StyledButton>
       <Modal
         show={show}
         onHide={() => setShow(false)}

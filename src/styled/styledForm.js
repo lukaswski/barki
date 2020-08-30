@@ -9,7 +9,11 @@ export const StyledContainer = styled(Container)`
     }
 `;
 export const StyledButton = styled(Button)`
-  margin: 5px auto;
+  margin-top: 15px ;
+  &.DashboardCardButton{
+    margin-top: 50px;
+    margin-botton: 10px;
+  }
 `;
 export const StyledInput = styled.input`
   height: 40px;
@@ -41,6 +45,7 @@ export const StyledJumbotron = styled(Jumbotron)`
   align-items: center;
   width: 49%;
   float: left;
+  padding-bottom: 10px;
   &.first{
     width:100%;
   };
