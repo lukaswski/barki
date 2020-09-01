@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Container, Col,
 } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { database } from '../../firebase/firebaseConfig';
 import { StyledJumbotron, StyledInput, StyledButton } from '../../styled/styledForm';
 import ModalForm from '../../utilities/ModalForm';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
 
-export default () => {
+export default ({userUid, userName}) => {
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
-  const [show, setShow] = useState(false);
-  const onSubmit = (data) => console.log(data);
 
-  const createInput = (...args) => (
+  const writeDatabase = (data) => database.ref(`users/${userName} - ${userUid}`).update(data);
+
+  const onSubmit = (data) => (writeDatabase(data));
+
+  const createInput = (...inputs) => (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {args.map((arg) => (<StyledInput name={arg} placeholder={arg} ref={register} />))}
-      <StyledButton type="submit" variant="outline-success" onClick={() => setShow(false)} block>Zapisz informację</StyledButton>
+      {inputs.map((input) => (<StyledInput className="modalInputs" name={input} placeholder={input} ref={register} />))}
+      <StyledButton type="submit" variant="outline-success" block>Zapisz informację</StyledButton>
     </form>
   );
-
   return (
     <Container>
       <h2>
         Witaj w Barki!
       </h2>
       {DASHBOARD_CARD_CONTENT.map(({
-        head, content, content1, button, key, inputs,
+        head, content, content1, button, key, inputs, title,
       }) => (
         <Col sm key={key}>
           <StyledJumbotron className={key}>
@@ -40,6 +42,7 @@ export default () => {
               <ModalForm
                 buttonName={button}
                 inputs={createInput(...inputs)}
+                modalTitle={title}
               />
             </p>
           </StyledJumbotron>

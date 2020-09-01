@@ -29,6 +29,12 @@ export const StyledInput = styled.input`
     &.password{
       margin-bottom: 50px;
     }
+    &.modalInputs{
+      width: 80%; 
+      margin-left: auto; 
+      margin-right: auto;
+      display: block
+    }
 `;
 export const StyledLabel = styled.label`
   margin: 10px auto;

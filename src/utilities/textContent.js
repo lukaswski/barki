@@ -5,7 +5,9 @@ export const DASHBOARD_CARD_CONTENT = [{
   content1: 'Uzupełnij profil o swoje podstawowe dane',
   button: 'Uzupełnij profil',
   key: 'first',
+  title: 'Podstawowe dane do konta',
   inputs: ['imię', 'nazwisko', 'kraj', 'miasto', 'ulica', 'numer domu', 'numer mieszkania', 'kod pocztowy'],
+  handleInputs: ['name', 'surname', 'country', 'city', 'street', 'number', 'flatNnumer', 'postCode'],
 },
 {
   head: 'Dodaj Psiaka',
@@ -13,7 +15,10 @@ export const DASHBOARD_CARD_CONTENT = [{
   content1: 'Uzupełnił informację o swoim podopiecznym',
   button: 'Dodaj Psiaka',
   key: 'second',
+  title: 'Informacje o Pupilu',
   inputs: ['imię Psa', 'rasa', 'wiek'],
+  handleInputs: ['dogName', 'race', 'age'],
+
 },
 {
   head: 'Dodaj Obrożę',
@@ -21,5 +26,7 @@ export const DASHBOARD_CARD_CONTENT = [{
   content1: 'Sparujesz ją ze swoim profilem',
   button: 'Dodaj obrożę',
   key: 'third',
+  title: 'Numer seryjny posiadanej obroży',
   inputs: ['numer seryjny obroży'],
+  handleInputs: ['serialNumber'],
 }];

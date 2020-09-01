@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { StyledButton } from '../styled/styledForm';
 
-export default ({ buttonName, inputs }) => {
+export default ({ buttonName, inputs, modalTitle }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -20,6 +20,7 @@ export default ({ buttonName, inputs }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+            <h5>{modalTitle}</h5>
             {inputs}
         </Modal.Body>
       </Modal>

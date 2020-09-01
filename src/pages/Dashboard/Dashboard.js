@@ -6,11 +6,13 @@ export default () => {
   const { userData } = useContext(LoginContext);
 
   const [ userDataValue, setUserDataValue ] = userData;
-  console.log(userDataValue);
+  console.log(userDataValue.name);
   return (
     <>
-      {userDataValue.userName}
-      <FirstLogin />
+      <FirstLogin 
+      userUid={userDataValue.uid}
+      userName={userDataValue.name}
+      />
     </>
   );
 };

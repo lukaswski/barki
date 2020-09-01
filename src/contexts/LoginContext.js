@@ -7,7 +7,7 @@ export const LoginProvider = (props) => {
   const [userData, setUserData] = useState({});
 
   const writeDatabase = (name, email, uid) => {
-    database.ref(`users/${name} - ${uid}`).set({
+    database.ref(`users/${name} - ${uid}`).update({
       name,
       email,
       uid,
@@ -26,7 +26,7 @@ export const LoginProvider = (props) => {
       email: data.email,
       uid: data.uid,
     },
-    data.displayName.length < 0 && writeDatabase(data.displayName, data.email, data.uid),
+    writeDatabase(data.displayName, data.email, data.uid),
     readDatabase(data.displayName, data.uid)));
     return () => unsubscribe();
   }, []);
