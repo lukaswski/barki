@@ -12,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
    margin: 0;
-   font-family: Arial, Helvetica, sans-serif
+   box-shadow: ${props => props.shadow ? `10 10 20 dimgrey` : null };
+   font-family: Helvetica, sans-serif;
   }
 
   h1{
@@ -26,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     color: black;
     text-decoration: none;
   }
+
 `;
 
 export default GlobalStyle;
