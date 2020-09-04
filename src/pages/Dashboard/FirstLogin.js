@@ -19,7 +19,7 @@ export default ({userUid, userName}) => {
 
   const createInput = (...inputs) => (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {inputs.map((input) => (<StyledInput className="modalInputs" name={input} placeholder={input} ref={register} />))}
+      {inputs.map((input) => (<StyledInput key={input} className="modalInputs" name={input} placeholder={input} ref={register} />))}
       <StyledButton type="submit" variant="outline-success" block>Zapisz informację</StyledButton>
     </form>
   );
@@ -29,7 +29,7 @@ export default ({userUid, userName}) => {
         Witaj w Barki!
       </h2>
       {DASHBOARD_CARD_CONTENT.map(({
-        head, content, content1, button, key, inputs, title,
+        head, content, content1, button, key, handleInputs, title,
       }) => (
         <Col sm key={key}>
           <StyledJumbotron className={key}>
@@ -41,7 +41,7 @@ export default ({userUid, userName}) => {
             <p>
               <ModalForm
                 buttonName={button}
-                inputs={createInput(...inputs)}
+                inputs={createInput(...handleInputs)}
                 modalTitle={title}
               />
             </p>
