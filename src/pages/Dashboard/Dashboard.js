@@ -5,16 +5,23 @@ import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
 
 export default () => {
   const { userData } = useContext(LoginContext);
-  const [ userDataValue, setUserDataValue ] = userData;
-  console.log(userDataValue.city);
+  const [userDataValue, setUserDataValue] = userData;
+  const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
+  const { userName, dogName, serialNumber, uid, name } = userDataValue;
 
- const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
+  const firstLoginCards = [];
+  const displayFirstLoginCards = (arg, arg2) => arg2 == undefined && firstLoginCards.push(arg);
+
+  displayFirstLoginCards(basicInformation, userName);
+  displayFirstLoginCards(dogInformation, dogName);
+  displayFirstLoginCards(CollaarInformation, serialNumber);
 
   return (
     <>
-      <FirstLogin 
-        userUid={userDataValue.uid}
-        userName={userDataValue.name}
+      <FirstLogin
+        userUid={uid}
+        userName={name}
+        firstLoginCards={firstLoginCards}
       />
     </>
   );

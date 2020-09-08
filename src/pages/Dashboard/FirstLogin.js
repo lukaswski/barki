@@ -8,12 +8,12 @@ import { StyledJumbotron, StyledInput, StyledButton } from '../../styled/styledF
 import ModalForm from '../../utilities/ModalForm';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
 
-export default ({userUid, userName}) => {
+export default ({ userUid, firstLoginCards }) => {
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
 
-  const writeDatabase = (data) => database.ref(`users/${userName} - ${userUid}`).update(data);
+  const writeDatabase = (data) => database.ref(`users/${userUid}`).update(data);
 
   const onSubmit = (data) => (writeDatabase(data));
 
@@ -28,7 +28,7 @@ export default ({userUid, userName}) => {
       <h2>
         Witaj w Barki!
       </h2>
-      {DASHBOARD_CARD_CONTENT.map(({
+      {firstLoginCards.map(({
         head, content, content1, button, key, handleInputs, title,
       }) => (
         <Col sm key={key}>

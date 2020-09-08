@@ -7,7 +7,7 @@ export const DASHBOARD_CARD_CONTENT = [{
   key: 'first',
   title: 'Podstawowe dane do konta',
   inputs: ['imię', 'nazwisko', 'kraj', 'miasto', 'ulica', 'numer domu', 'numer mieszkania', 'kod pocztowy'],
-  handleInputs: ['name', 'surname', 'country', 'city', 'street', 'number', 'flatNnumer', 'postCode'],
+  handleInputs: ['userName', 'surname', 'country', 'city', 'street', 'number', 'flatNnumer', 'postCode'],
 },
 {
   head: 'Dodaj Psiaka',
