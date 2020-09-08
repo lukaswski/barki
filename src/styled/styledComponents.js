@@ -28,17 +28,23 @@ export const StyledHero = styled.div`
     @media(max-width: 1000px){
       background-image: url('${heroMed}');
     }
-    @media(max-width: 760px){
+    @media(max-width: 680px){
       background-image: url('${heroMobile}');
     }
 `;
-export const HeroSlogan = styled.h1`
+export const HeroSlogan = styled.div`
   height: 40vh;
   padding-top: 20vh;
+  margin-bottom: 20px;
   padding-bottom: 0;
   text-shadow: 10px 10px 20px dimgrey;
   color:white;
   font-size: 3.0rem;
+   @media(max-width: 780px){
+      padding-top: 30px;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
    @media(max-width: 500px){
       padding-top: 60px;
       text-align: center;
@@ -46,6 +52,13 @@ export const HeroSlogan = styled.h1`
 `;
 
 export const HeroButton = styled(Button)`
-margin-top: 90px;
+  width: 100%;
+  opacity: 80%;
+  margin-top: 90px;
   box-shadow: 10px 10px 20px dimgrey;
+    @media(max-width: 850px){
+      margin-top: 160px;
+      text-align: center;
+    }
+  
 `;

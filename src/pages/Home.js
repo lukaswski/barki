@@ -1,18 +1,22 @@
 import React from 'react';
-import { Container, Col } from 'react-bootstrap';
+import {
+  Container, Col, OverlayTrigger, Tooltip,
+} from 'react-bootstrap';
 import { StyledHero, HeroSlogan, HeroButton } from '../styled/styledComponents';
 
 export default () => (
   <>
     <StyledHero>
-      <Col md={{ span: 6, offset: 5 }} t="4">
+      <Col md={{ span: 6, offset: 5 }}>
         <HeroSlogan>
-          Wibracyjna obroża antyszczekowa dla psów.
+          Wibracyjna obroża antyszczekowa.
+          <h5>Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu.</h5>
         </HeroSlogan>
-        <h5>Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu.</h5>
       </Col>
-      <Col md={{ span: 4, offset: 8 }} t="4">
-        <HeroButton size="lg" variant="primary">Przetestuj bez logowania</HeroButton>
+      <Col md={{ span: 3, offset: 8 }}>
+        <OverlayTrigger overlay={<Tooltip id="tooltip">Testowy dostęp do aplikacji bez logowania!</Tooltip>}>
+          <HeroButton size="lg" variant="primary" onClick={() => alert('testujesz bez logowania')}>Przetestuj</HeroButton>
+        </OverlayTrigger>
       </Col>
     </StyledHero>
     <Container>Home</Container>

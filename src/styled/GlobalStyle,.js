@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
    margin: 0;
-   box-shadow: ${props => props.shadow ? `10 10 20 dimgrey` : null };
+   box-shadow: ${(props) => (props.shadow ? '10 10 20 dimgrey' : null)};
    font-family: Helvetica, sans-serif;
   }
 
@@ -22,7 +22,9 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     font-size: 1.2rem;
   }
-
+  h5{
+    color: black;
+    }
   ul {
     color: black;
     text-decoration: none;
