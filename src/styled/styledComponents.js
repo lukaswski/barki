@@ -49,11 +49,14 @@ export const HeroSlogan = styled.div`
       padding-top: 60px;
       text-align: center;
     }
+    @media(max-width: 300px){
+      font-size: 2.0rem;
+    }
 `;
 
 export const HeroButton = styled(Button)`
   width: 100%;
-  opacity: 80%;
+  opacity: 90%;
   margin-top: 90px;
   box-shadow: 10px 10px 20px dimgrey;
     @media(max-width: 850px){

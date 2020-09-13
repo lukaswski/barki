@@ -74,14 +74,16 @@ export default ({ registerButton }) => {
           </label>
         </div>
       ) : (
-        <StyledLabel>
-          nie pamiętasz hasła?
+        <div>
+          <StyledLabel>
+            nie pamiętasz hasła?
+          </StyledLabel>
           <ResetPasswordModal
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
-        </StyledLabel>
-      ) }
+        </div>
+      )}
     </StyledContainer>
   );
 };

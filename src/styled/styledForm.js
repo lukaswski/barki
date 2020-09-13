@@ -12,7 +12,11 @@ export const StyledButton = styled(Button)`
   margin-top: 15px ;
   &.DashboardCardButton{
     margin-top: 50px;
-    margin-botton: 10px;
+    margin-bottom: 10px;
+  }
+  &.resetPasswordLink{
+    width: 30%;
+    margin: 0 auto;
   }
 `;
 export const StyledInput = styled.input`

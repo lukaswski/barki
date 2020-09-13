@@ -9,8 +9,8 @@ export default () => (
     <StyledHero>
       <Col md={{ span: 6, offset: 5 }}>
         <HeroSlogan>
-          Wibracyjna obroża antyszczekowa.
-          <h5>Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu.</h5>
+          Wibracyjna obroża antyszczekowa
+          <h5>Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu</h5>
         </HeroSlogan>
       </Col>
       <Col md={{ span: 3, offset: 8 }}>

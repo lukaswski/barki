@@ -39,7 +39,7 @@ export default () => {
 
   return (
     <>
-      <StyledButton variant="link" block onClick={() => setModalShow(true)}>
+      <StyledButton className="resetPasswordLink" variant="link" block onClick={() => setModalShow(true)}>
         resetuj hasło
       </StyledButton>
       <ResetPasswordModal

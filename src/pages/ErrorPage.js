@@ -1,5 +1,8 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 export default () => (
-  <h2>Ops! taka strona nie istnieje!</h2>
+  <Container>
+    <h2>Ops! taka strona nie istnieje!</h2>
+  </Container>
 );
