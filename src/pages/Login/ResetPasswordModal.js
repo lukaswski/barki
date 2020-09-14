@@ -21,9 +21,9 @@ const ResetPasswordModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>
+        <div>
           Podaj adres na który chcesz otrzymać link do resetowania hasła
-        </p>
+        </div>
         <StyledInput name="email" type="email" placeholder="email" onChange={handleResetPassword} className="passwordReset" />
       </Modal.Body>
       <Modal.Footer>

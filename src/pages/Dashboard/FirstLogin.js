@@ -32,16 +32,16 @@ export default ({ userUid, firstLoginCards }) => {
           <StyledJumbotron className={key}>
             <h3>{head}</h3>
             <hr />
-            <p>{content}</p>
-            <p>{content1}</p>
+            <div>{content}</div>
+            <div>{content1}</div>
             <hr />
-            <p>
+            <div>
               <ModalForm
                 buttonName={button}
                 inputs={createInput(...handleInputs)}
                 modalTitle={title}
               />
-            </p>
+            </div>
           </StyledJumbotron>
         </Col>
       ))}

@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
+import DashboardMainCard from './DashboardComponents/DashboardMainCard';
 
 export default () => {
   const { userData } = useContext(LoginContext);
   const [userDataValue, setUserDataValue] = userData;
   const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
-  const { userName, dogName, serialNumber, uid, name } = userDataValue;
+  const {
+    userName, dogName, serialNumber, uid, name,
+  } = userDataValue;
 
   const firstLoginCards = [];
   const displayFirstLoginCards = (arg, arg2) => arg2 == undefined && firstLoginCards.push(arg);
@@ -18,11 +22,19 @@ export default () => {
 
   return (
     <>
-      <FirstLogin
-        userUid={uid}
-        userName={name}
-        firstLoginCards={firstLoginCards}
-      />
+      {firstLoginCards.length > 0
+        ? (
+          <FirstLogin
+            userUid={uid}
+            userName={name}
+            firstLoginCards={firstLoginCards}
+          />
+        )
+        : (
+          <DashboardMainCard
+          userDataValue={userDataValue}
+          />
+        )}
     </>
   );
 };
