@@ -17,15 +17,18 @@ export default ({ userDataValue }) => {
         </h4>
         <hr />
         <Row>
-          <Col md={{ span: 4, offset: 0 }}>
+          <Col md={{ span: 6, offset: 0 }} xs={{ order: 'last' }}>
             <DogInformation
               userDataValue={userDataValue}
             />
           </Col>
-          <Col md={{ span: 3, offset: 0 }}>
+          <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
             <Calendar />
           </Col>
+        </Row>
+        <Row>
           <Col>
+            <hr />
             <Notification />
           </Col>
         </Row>
