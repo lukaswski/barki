@@ -13,7 +13,7 @@ export default ({ userDataValue }) => {
     <>
       <BackgroundContainer>
         <h4>
-          {userDataValue.name}
+          {userDataValue.userName}
         </h4>
         <hr />
         <Row>

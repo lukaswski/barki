@@ -1,9 +1,10 @@
 import React from 'react';
-import { Col, Table, Button } from 'react-bootstrap';
+import { Col, Table, Button, Container } from 'react-bootstrap';
 
 export default () => (
   <>
   <Col md={12}>
+    <Container>
     <hr />
     <h3>Dzienna historia</h3>
     <Table striped bordered hover size="sm">
@@ -35,6 +36,7 @@ export default () => (
         </tr>
       </tbody>
     </Table>
+    </Container>
   </Col>
   <Col md={{ span: 0, offset: 10 }}><Button varint="outline-primary">Cała historia</Button></Col>
   </>

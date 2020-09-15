@@ -1,18 +1,19 @@
 import React from 'react';
-import {Col, Card, Button, Row } from 'react-bootstrap';
+import { Col, Card, Button, Row } from 'react-bootstrap';
+import { dotsIcon } from '../../../img/iconsSVG/iconsSvg';
+
 
 export default ({ userDataValue }) => (
 
 <Card border="light">
   <Card.Header>
     <Row>
-      <Col>
+      <Col md={{ span: 3, offset: 0 }} sm={{span: 2, offset: 0}} xs={{span: 5, offset: 0 }}>
         <h5>{userDataValue.dogName}</h5>
         {' '}
       </Col>
-      <Col>
-        <Button variant="dark">=</Button>
-        <Button variant="outline-primary">+</Button>
+      <Col md={{ span: 2, offset: 7 }} sm={{span: 2, offset: 8 }} xs={{span: 1, offset: 4 }}>
+        <Button variant="outline-secondary">{dotsIcon}</Button>
       </Col>
     </Row>
   </Card.Header>

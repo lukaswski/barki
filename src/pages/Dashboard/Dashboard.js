@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { Container } from 'react-bootstrap';
 import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
-import DashboardMainCard from './DashboardComponents/DashboardMainCard';
+import DashboardMainCard from './DashboardComponents/MainCard';
 
 export default () => {
   const { userData } = useContext(LoginContext);
@@ -32,7 +31,7 @@ export default () => {
         )
         : (
           <DashboardMainCard
-          userDataValue={userDataValue}
+            userDataValue={userDataValue}
           />
         )}
     </>
