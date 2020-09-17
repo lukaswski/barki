@@ -13,14 +13,13 @@ import ResetPasswordModal from './ResetPasswordModal';
 export default ({ registerButton }) => {
   const history = useHistory();
   const [rulesCheckbox, setRulesCheckbox] = useState(true);
-  const [fadeIn, setFadeIn] = useState(true);
   const [dataProcessCheckbox, setDataProcess] = useState(true);
   const [modalShow, setModalShow] = useState(false);
 
   const registerAccess = () => ((rulesCheckbox || dataProcessCheckbox) && !registerButton);
 
   return (
-    <Fade in={fadeIn} appear>
+    <Fade in appear>
       <StyledContainer>
         {registerButton
           ? (

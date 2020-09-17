@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import {
- StyledLabel, StyledButton, StyledSpan, StyledInput,
+import { StyledButton, StyledSpan, StyledInput,
 } from '../../styled/styledForm';
 
 export default ({ name, submitButtonText, handleOnSubmit, registerAccess }) => {

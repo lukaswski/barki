@@ -1,10 +1,10 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
+import { Container, Fade } from 'react-bootstrap';
 
-export default () => {
-  
-  return (
-  <Container>
-    About
-  </Container>
-)};
+export default () => (
+  <Fade in appear>
+    <Container>
+      About
+    </Container>
+  </Fade>
+);
