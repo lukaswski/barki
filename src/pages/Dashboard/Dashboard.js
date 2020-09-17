@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Fade } from 'react-bootstrap';
 import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
-import DashboardMainCard from './DashboardComponents/MainCard';
+import DashboardMainCard from './DashboardComponents/MainDashboard';
 
 export default () => {
   const { userData } = useContext(LoginContext);
+  const [fadeIn, setFadeIn] = useState(true);
   const [userDataValue, setUserDataValue] = userData;
   const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
   const {
@@ -20,7 +22,8 @@ export default () => {
   displayFirstLoginCards(CollaarInformation, serialNumber);
 
   return (
-    <>
+    <Fade in={fadeIn} appear>
+    <div>
       {firstLoginCards.length > 0
         ? (
           <FirstLogin
@@ -34,6 +37,7 @@ export default () => {
             userDataValue={userDataValue}
           />
         )}
-    </>
+    </div>
+    </Fade>
   );
 };

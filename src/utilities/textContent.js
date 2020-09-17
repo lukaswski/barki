@@ -30,3 +30,10 @@ export const DASHBOARD_CARD_CONTENT = [{
   inputs: ['numer seryjny obroży'],
   handleInputs: ['serialNumber'],
 }];
+
+export const HERO_CONTENT = {
+  title: 'Wibracyjna obroża antyszczekowa',
+  subtitle: 'Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu',
+  tooltip: 'Testowy dostęp do aplikacji bez logowania!',
+  button: 'przetestuj',
+};

@@ -13,7 +13,6 @@ export default ({ name, submitButtonText, handleOnSubmit, registerAccess }) => {
 
   const onSubmit = ({ email, password }) => handleOnSubmit(email, password).then(() => history.push('/dashboard'));
   return (
-
     <div>
       <h2>{name}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>

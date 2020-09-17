@@ -1,6 +1,10 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
-export default () => (
-  <Container>About</Container>
-);
+export default () => {
+  
+  return (
+  <Container>
+    About
+  </Container>
+)};
