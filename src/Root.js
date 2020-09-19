@@ -19,6 +19,7 @@ import LoginPage from './pages/Login/LoginPage';
 import Contact from './pages/Contact';
 import NotLogged from './pages/NotLogged';
 import Rules from './pages/Rules';
+import Faq from './pages/Faq';
 
 function Root() {
   const { user, userData } = useContext(LoginContext);
@@ -57,7 +58,7 @@ function Root() {
       </Navbar>
 
       <Switch>
-        <Route exact path="/">
+        <Route exact strict path="/">
           <Home />
         </Route>
         <Route path="/about">
@@ -74,8 +75,11 @@ function Root() {
         <Route path="/contact">
           <Contact />
         </Route>
-        <Route>
-          <Rules path="/rules" />
+        <Route path="/rules">
+          <Rules />
+        </Route>
+        <Route path="/faq">
+          <Faq />
         </Route>
         <Route>
           <ErrorPage />

@@ -37,3 +37,36 @@ export const HERO_CONTENT = {
   tooltip: 'Testowy dostęp do aplikacji bez logowania!',
   button: 'przetestuj',
 };
+
+export const FAQ_SITE_CONTENT = {
+  title: 'Najczęstrze pytania:',
+  subtitle: 'Sprawdź najczęsciej zadawane pytania, jeśli nie znajdujesz tu odpowiedzi napisz do nas! formularz kontaktowy znajdziesz poniżej.',
+};
+
+export const FAQ_ACCORDION_CONTENT = [
+  {
+    key: '0',
+    question: 'Czy obroża barki jest elektryczna?',
+    answer: 'Obroża barki jest elektryczna ;) ale nie razi pieska prądem, do wyciszania zachowań używamy wyłącznie wibracji',
+  },
+  {
+    key: '1',
+    question: 'Czy wysyłacie do uk?',
+    answer: 'możemy zlecić wysyłkę do krajów zagranicznych',
+  },
+  {
+    key: '2',
+    question: 'Czy poradzę sobie z konfiguracją?',
+    answer: 'Obroża jest przygotowana do używania, bateria jest naładowana - jedyne co trzeba to zarejestrować się w aplikacji oraz połączyć obroże z internetem domowym co jest wyjaśnione w dołączonej instrukcji obsługi',
+  },
+  {
+    key: '3',
+    question: 'Czy to pieska boli?',
+    answer: 'Zdecydowanie NIE! obroża barki jest wibracyjna, jej działania mają rozproszyć uwagę szczekającego lub wyjącego psa co czyni bradzo skutecznie ;)',
+  },
+  {
+    key: '4',
+    question: 'Jak długo pies oducza się szczekania?',
+    answer: 'Tego niestety nikt nie wie, wywnioskujesz to po statystykach w aplikacji',
+  },
+];
