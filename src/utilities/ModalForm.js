@@ -20,8 +20,8 @@ export default ({ buttonName, inputs, modalTitle }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h5>{modalTitle}</h5>
-            {inputs}
+          <h5>{modalTitle}</h5>
+          {inputs}
         </Modal.Body>
       </Modal>
     </>

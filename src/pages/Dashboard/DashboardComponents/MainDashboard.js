@@ -1,56 +1,86 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Row, Col, Button, Fade,
 } from 'react-bootstrap';
+import {
+  useRouteMatch, Link, Route, Switch, useLocation,
+} from 'react-router-dom';
 import { BackgroundContainer } from '../../../styled/styledDashboard';
 import DogInformation from './DogInformation';
 import Calendar from './Calendar';
 import Notification from './Notification';
 import BarkHistory from './BarkHistory';
+import DogProfil from './nestedComponents/DogProfil';
+import AllHistory from './nestedComponents/AllHistory';
+import UserProfile from './nestedComponents/UserProfile';
 
 export default ({ userDataValue }) => {
-  const [fadeIn, setFadeIn] = useState(true);
-  console.log(userDataValue);
-
+  const { path, url } = useRouteMatch();
   return (
     <>
-      <Fade in={fadeIn} appear>
+      <Fade in appear>
         <BackgroundContainer>
-          <Row>
-            <Col
-              md={{ span: 5, offset: 0 }}
-              sm={{ span: 4, offset: 0 }}
-              xs={{ span: 5, offset: 0 }}>
-              <h5>{userDataValue.userName}</h5>
-              {' '}
+          {useLocation().pathname !== url
+            && (
+            <Col md={{ span: 2, offset: 10 }} xs={{ span: 2, offset: 9 }}>
+              <Link to={`${url}`}>
+                <Button variant="outline-primary">Powrót</Button>
+              </Link>
             </Col>
-            <Col
-              md={{ span: 1, offset: 6 }}
-              sm={{ span: 2, offset: 6 }}
-              xs={{ span: 2, offset: 4 }}>
-              <Button variant="outline-secondary">profil</Button>
-            </Col>
-          </Row>
-          <hr />
-          <Row>
-            <Col md={{ span: 6, offset: 0 }} xs={{ order: 'last' }}>
-              <DogInformation
-                userDataValue={userDataValue}
-              />
-            </Col>
-            <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
-              <Calendar />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
+            )}
+          <Switch>
+            <Route path={`${path}/user-profile`}>
+              <UserProfile />
+            </Route>
+            <Route path={`${path}/dog-profile`}>
+              <DogProfil />
+            </Route>
+            <Route path={`${path}/all-history`}>
+              <AllHistory />
+            </Route>
+            <Route exact path={path}>
+              <Row>
+                <Col
+                  md={{ span: 5, offset: 0 }}
+                  sm={{ span: 4, offset: 0 }}
+                  xs={{ span: 5, offset: 0 }}
+                >
+                  <h5>{userDataValue.userName}</h5>
+                  {' '}
+                </Col>
+                <Col
+                  md={{ span: 1, offset: 6 }}
+                  sm={{ span: 2, offset: 6 }}
+                  xs={{ span: 2, offset: 4 }}
+                >
+                  <Link to={`${url}/user-profile`}><Button variant="outline-secondary">profil</Button></Link>
+                </Col>
+              </Row>
               <hr />
-              <Notification />
-            </Col>
-          </Row>
-          <Row>
-            <BarkHistory />
-          </Row>
+              <Row>
+                <Col md={{ span: 6, offset: 0 }} xs={{ order: 'last' }}>
+                  <DogInformation
+                    userDataValue={userDataValue}
+                    url={url}
+                  />
+                </Col>
+                <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
+                  <Calendar />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <hr />
+                  <Notification />
+                </Col>
+              </Row>
+              <Row>
+                <BarkHistory
+                  url={url}
+                />
+              </Row>
+            </Route>
+          </Switch>
         </BackgroundContainer>
       </Fade>
     </>

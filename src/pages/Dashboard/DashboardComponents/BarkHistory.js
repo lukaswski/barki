@@ -2,9 +2,10 @@ import React from 'react';
 import {
   Col, Button, Container, Badge,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { StyledTable } from '../../../styled/styledDashboard';
 
-export default () => (
+export default ( { url }) => (
   <>
     <Col md={12}>
       <Container>
@@ -35,6 +36,6 @@ export default () => (
         </StyledTable>
       </Container>
     </Col>
-    <Col md={{ span: 0, offset: 10 }}><Button varint="outline-primary">Cała historia</Button></Col>
+    <Col md={{ span: 0, offset: 10 }}><Link to={`${url}/all-history`}><Button variant="outline-secondary">cała historia</Button></Link></Col>
   </>
 );

@@ -22,21 +22,21 @@ export default () => {
 
   return (
     <Fade in appear>
-    <div>
-      {firstLoginCards.length > 0
-        ? (
-          <FirstLogin
-            userUid={uid}
-            userName={name}
-            firstLoginCards={firstLoginCards}
-          />
-        )
-        : (
-          <DashboardMainCard
-            userDataValue={userDataValue}
-          />
-        )}
-    </div>
+      <div>
+        {firstLoginCards.length > 0
+          ? (
+            <FirstLogin
+              userUid={uid}
+              userName={name}
+              firstLoginCards={firstLoginCards}
+            />
+          )
+          : (
+            <DashboardMainCard
+              userDataValue={userDataValue}
+            />
+          )}
+      </div>
     </Fade>
   );
 };
