@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { database } from '../../firebase/firebaseConfig';
 import { StyledJumbotron, StyledInput, StyledButton } from '../../styled/styledForm';
 import ModalForm from '../../utilities/ModalForm';
-import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
 
 export default ({ userUid, firstLoginCards }) => {
   const {

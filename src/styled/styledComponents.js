@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap';
 import hero from '../img/hero.jpg';
 import heroMed from '../img/heroMed.jpg';
 import heroMobile from '../img/heroMobile.jpg';
+import NotLogged from '../img/notLogged.jpg';
+import notLoggedMobile from '../img/notLoggedMobile.jpg';
 
 export const StyledLink = styled(Link)`
   color: dimgray;
@@ -17,6 +19,47 @@ export const StyledLink = styled(Link)`
       color: black;
       letter-spacing: 2px;
       font-weight: 500;
+    }
+    &.notLoggedLink{
+      margin: auto;
+    }
+`;
+
+export const NotLoggedBackground = styled.div`
+  width: 100%;
+  height: 650px;
+  background-image: url('${NotLogged}');
+  background-size: cover;
+  @media(max-width: 1000px){
+        background-image: url('${notLoggedMobile}');
+    }
+`;
+
+export const NotLoggedText = styled.div`
+  font-size: 3rem;
+  width: 500px;
+  margin-left: 50%;
+  padding: 10% 0;
+    &.notLoggedTitle{
+      margin-left: 0;
+      @media(max-width: 600px){
+        margin-bottom: 240px;
+      }
+    }
+    &.subtitle{
+      text-align: center;
+      font-size: 16px;
+      padding: 10px 0;
+      font-style: italic;
+      margin:auto;
+      };
+  @media(max-width: 1000px){
+      margin: 0 auto;
+      width: 80%;
+    };
+  @media(max-width: 800px){
+    font-size: 2rem;
+      margin: 0 auto;
     }
 `;
 

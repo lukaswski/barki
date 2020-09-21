@@ -65,7 +65,7 @@ function Root() {
           <About />
         </Route>
         <Route path="/dashboard">
-          {userValue.email ? <Dashboard /> : <NotLogged />}
+          {userValue.email ? <Dashboard /> : <NotLogged setRegisterButton={setRegisterButton} />}
         </Route>
         <Route path="/login">
           <LoginPage
