@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Fade } from 'react-bootstrap';
+import { Fade, Spinner } from 'react-bootstrap';
 import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
@@ -10,11 +10,11 @@ export default () => {
   const [userDataValue, setUserDataValue] = userData;
   const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
   const {
-    userName, dogName, serialNumber, uid, name,
+    userName, dogName, serialNumber, uid, name, first,
   } = userDataValue;
 
   const firstLoginCards = [];
-  const displayFirstLoginCards = (arg, arg2) => arg2 == undefined && firstLoginCards.push(arg);
+  const displayFirstLoginCards = (arg, arg2) => first === true & arg2 === undefined && firstLoginCards.push(arg);
 
   displayFirstLoginCards(basicInformation, userName);
   displayFirstLoginCards(dogInformation, dogName);
