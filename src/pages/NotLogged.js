@@ -16,8 +16,8 @@ export default ({ setRegisterButton }) => {
       <NotLoggedBackground>
         <NotLoggedText>
           <NotLoggedText className="notLoggedTitle">
-          Wygląda na to że,
-          nie jesteś zalogowany!
+            Psia kość!
+            Nie jesteś zalogowany...
           </NotLoggedText>
           <StyledLink to="login" className="notLoggedLink">
             <Button block variant="info" onClick={() => setRegisterButton(true)}>

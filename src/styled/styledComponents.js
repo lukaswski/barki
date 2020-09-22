@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import hero from '../img/hero.jpg';
 import heroMed from '../img/heroMed.jpg';
 import heroMobile from '../img/heroMobile.jpg';
 import NotLogged from '../img/notLogged.jpg';
 import notLoggedMobile from '../img/notLoggedMobile.jpg';
+import Footer from '../img/Footer.jpg';
+import FooterMid from '../img/FooterMid.jpg';
+import FooterMobile from '../img/FooterMobile.jpg';
 
 export const StyledLink = styled(Link)`
   color: dimgray;
@@ -107,4 +110,42 @@ export const HeroButton = styled(Button)`
       text-align: center;
     }
   
+`;
+
+export const StyledFooter = styled.div`
+  width:100%;
+  height: 750px;
+  background-image: url('${Footer}');
+  background-size: cover;
+      @media(max-width: 1000px){
+        background-image: url('${FooterMid}');
+        height: 800px;
+    }
+    @media(max-width: 420px){
+        background-image: url('${FooterMobile}');
+        height: 1000px;
+    }
+  
+`;
+export const StyledFooterRow = styled(Row)`
+  padding-top: 40px;
+  font-size: 24px;
+  &.subtitle{
+    font-size: 18px;
+    padding-top:5px;
+  }
+  &.ownerInfo{
+    padding: 75px 35% 0 35%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    @media(max-width: 660px){
+        padding: 190px 10% 0 10%;
+    }
+    @media(max-width: 400px){
+        padding: 280px 10% 0 10%;
+    }
+  }
 `;
