@@ -5,16 +5,11 @@ import {
 } from 'react-bootstrap';
 import { StyledFooter, StyledFooterRow } from '../styled/styledComponents';
 import { facebookIcon, githubIcon, mailIcon } from '../img/iconsSVG/iconsSvg';
-import FormTypes from '../utilities/FormTypes';
+import FormTypes from '../utilities/FormTypes'
 
 export default () => (
   <StyledFooter>
     <Container>
-      <StyledFooterRow>
-        <Col md={{ span: 5, offset: 6 }}>
-          Obroża antyszczekowa Barki
-        </Col>
-      </StyledFooterRow>
       <StyledFooterRow>
         <Col md={{ span: 5, offset: 6 }}>
           <Link to="/faq">FAQ</Link>
@@ -22,18 +17,9 @@ export default () => (
           - najczęściej zadawane pytania
         </Col>
       </StyledFooterRow>
-      
        <StyledFooterRow className="subtitle"><Col md={{ span: 4, offset: 6 }}>lub jeśli nie znajdziesz odpowiedzi</Col></StyledFooterRow>
       <StyledFooterRow><Col md={{ span: 5, offset: 6 }} xs>Kontakt do mnie!</Col></StyledFooterRow>
-      <StyledFooterRow><Col md={{ span: 5, offset: 6 }} xs><FormTypes /></Col></StyledFooterRow>
-      {/*<StyledFooterRow><Col md={{ span: 5, offset: 6 }} xs><input /></Col></StyledFooterRow>
-      <StyledFooterRow>
-        <Col md={{ span: 5, offset: 6 }}>
-          <Button>
-            Wyślij
-          </Button>
-        </Col> 
-      </StyledFooterRow>*/}
+      <StyledFooterRow className="form"><Col md={{ span: 5, offset: 6 }}><FormTypes /></Col></StyledFooterRow>
     </Container>
     <StyledFooterRow className="ownerInfo">
       Projekt strony oraz wykonanie:

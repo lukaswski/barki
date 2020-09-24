@@ -22,13 +22,14 @@ export const LoginProvider = (props) => {
 
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged((data) => setUser({
-      name: data.displayName,
+      name: data?.displayName,
       email: data.email,
       uid: data.uid,
     },
     writeDatabase(data.displayName, data.email, data.uid, true),
     readDatabase(data.displayName, data.uid)));
     return () => unsubscribe();
+    
   }, []);
 
   return (

@@ -48,7 +48,7 @@ export const StyledLabel = styled.label`
 export const StyledSpan = styled.div`
   margin: 5px auto;
   color: red;
-  font-size: 15px;
+  font-size: 14px;
 `;
 
 export const StyledJumbotron = styled(Jumbotron)`
@@ -67,4 +67,27 @@ export const StyledJumbotron = styled(Jumbotron)`
     &.third{
     margin-left: 0;
   }
+`;
+
+export const StyledTextarea = styled.textarea`
+  height: 80px;
+  border: 0;
+  resize: none;
+  border-bottom: 1px solid;
+  padding-left: 10%;
+  width: 100%;
+  margin-top: 30px;
+    :focus {
+      background-color: whitesmoke;
+      outline: none;
+    }
+    &.password{
+      margin-bottom: 50px;
+    }
+    &.modalInputs{
+      width: 80%; 
+      margin-left: auto; 
+      margin-right: auto;
+      display: block
+    }
 `;

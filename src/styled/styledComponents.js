@@ -115,16 +115,16 @@ export const HeroButton = styled(Button)`
 export const StyledFooter = styled.div`
   margin-top: 50px;
   width:100%;
-  height: 750px;
+  height: 850px;
   background-image: url('${Footer}');
   background-size: cover;
       @media(max-width: 1000px){
         background-image: url('${FooterMid}');
-        height: 800px;
+        height: 900px;
     }
     @media(max-width: 420px){
         background-image: url('${FooterMobile}');
-        height: 1000px;
+        height: 920px;
     }
   
 `;
@@ -133,6 +133,10 @@ width: 100%;
   padding-top: 40px;
   display: inline-block;
   font-size: 24px;
+  &.form{
+    margin-top: 0;
+    padding-top: 0;
+  }
   &.subtitle{
     font-size: 18px;
     padding-top:5px;
@@ -146,10 +150,10 @@ width: 100%;
     font-size: 14px;
     letter-spacing: 2px;
     @media(max-width: 660px){
-        padding: 190px 10% 0 10%;
+        padding: 150px 10% 0 10%;
     }
-    @media(max-width: 400px){
-        padding: 280px 10% 0 10%;
+    @media(max-width: 420px){
+        padding: 220px 10% 0 10%;
     }
   }
 `;
