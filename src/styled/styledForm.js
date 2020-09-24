@@ -21,6 +21,7 @@ export const StyledButton = styled(Button)`
 `;
 export const StyledInput = styled.input`
   height: 40px;
+  font-size: 12px;
   border: 0;
   border-bottom: 1px solid;
   padding-left: 10%;
@@ -72,6 +73,7 @@ export const StyledJumbotron = styled(Jumbotron)`
 export const StyledTextarea = styled.textarea`
   height: 80px;
   border: 0;
+  font-size: 12px;
   resize: none;
   border-bottom: 1px solid;
   padding-left: 10%;

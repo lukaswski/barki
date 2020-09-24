@@ -5,21 +5,21 @@ import {
 } from 'react-bootstrap';
 import { StyledFooter, StyledFooterRow } from '../styled/styledComponents';
 import { facebookIcon, githubIcon, mailIcon } from '../img/iconsSVG/iconsSvg';
-import FormTypes from '../utilities/FormTypes'
+import FormTypes from '../utilities/FormTypes';
 
 export default () => (
   <StyledFooter>
     <Container>
-      <StyledFooterRow>
-        <Col md={{ span: 5, offset: 6 }}>
+      <Col md={{ span: 9, offset: 2 }} lg={{ span: 6, offset: 6 }}>
+        <StyledFooterRow>
           <Link to="/faq">FAQ</Link>
           {' '}
           - najczęściej zadawane pytania
-        </Col>
-      </StyledFooterRow>
-       <StyledFooterRow className="subtitle"><Col md={{ span: 4, offset: 6 }}>lub jeśli nie znajdziesz odpowiedzi</Col></StyledFooterRow>
-      <StyledFooterRow><Col md={{ span: 5, offset: 6 }} xs>Kontakt do mnie!</Col></StyledFooterRow>
-      <StyledFooterRow className="form"><Col md={{ span: 5, offset: 6 }}><FormTypes /></Col></StyledFooterRow>
+        </StyledFooterRow>
+        <StyledFooterRow className="subtitle">lub jeśli nie znajdziesz odpowiedzi</StyledFooterRow>
+        <StyledFooterRow>Kontakt do mnie!</StyledFooterRow>
+        <FormTypes />
+      </Col>
     </Container>
     <StyledFooterRow className="ownerInfo">
       Projekt strony oraz wykonanie:
@@ -36,7 +36,7 @@ export default () => (
           <a href="https://www.github.com/lukaswski">{githubIcon}</a>
           {' '}
         </Col>
-        <Col lg={{ span: 0.5, offest: 3}} xs>
+        <Col lg={{ span: 0.5, offest: 3 }} xs>
           <a href="mailto:wski.lukas@gmail.com">{mailIcon}</a>
           {' '}
         </Col>
