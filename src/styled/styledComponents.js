@@ -113,6 +113,7 @@ export const HeroButton = styled(Button)`
 `;
 
 export const StyledFooter = styled.div`
+  margin-top: 50px;
   width:100%;
   height: 750px;
   background-image: url('${Footer}');
@@ -128,13 +129,16 @@ export const StyledFooter = styled.div`
   
 `;
 export const StyledFooterRow = styled(Row)`
+width: 100%;
   padding-top: 40px;
+  display: inline-block;
   font-size: 24px;
   &.subtitle{
     font-size: 18px;
     padding-top:5px;
   }
   &.ownerInfo{
+    margin: 0;
     padding: 75px 35% 0 35%;
     display: inline-block;
     width: 100%;

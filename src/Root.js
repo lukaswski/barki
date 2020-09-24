@@ -20,7 +20,6 @@ import Contact from './pages/Contact';
 import NotLogged from './pages/NotLogged';
 import Rules from './pages/Rules';
 import Faq from './pages/Faq';
-import Footer from './pages/Footer';
 
 function Root() {
   const { user, userData } = useContext(LoginContext);
@@ -86,7 +85,6 @@ function Root() {
           <ErrorPage />
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

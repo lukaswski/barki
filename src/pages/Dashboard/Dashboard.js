@@ -10,11 +10,11 @@ export default () => {
   const [userDataValue, setUserDataValue] = userData;
   const [basicInformation, dogInformation, CollaarInformation] = DASHBOARD_CARD_CONTENT;
   const {
-    userName, dogName, serialNumber, uid, name, first,
+    userName, dogName, serialNumber, uid, name, firstLogin,
   } = userDataValue;
 
   const firstLoginCards = [];
-  const displayFirstLoginCards = (arg, arg2) => first === true & arg2 === undefined && firstLoginCards.push(arg);
+  const displayFirstLoginCards = (arg, arg2) => firstLogin === true & arg2 === undefined && firstLoginCards.push(arg);
 
   displayFirstLoginCards(basicInformation, userName);
   displayFirstLoginCards(dogInformation, dogName);

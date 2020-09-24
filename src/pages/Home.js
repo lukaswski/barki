@@ -4,6 +4,7 @@ import {
 } from 'react-bootstrap';
 import { StyledHero, HeroSlogan, HeroButton } from '../styled/styledComponents';
 import { HERO_CONTENT } from '../utilities/textContent';
+import Footer from './Footer';
 
 export default () => {
   const [fadeIn, setFadeIn] = useState(true);
@@ -25,6 +26,7 @@ export default () => {
           </Col>
         </StyledHero>
         <Container>Home</Container>
+        <Footer />
       </div>
     </Fade>
   );
