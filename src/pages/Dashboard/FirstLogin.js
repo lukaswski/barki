@@ -11,8 +11,11 @@ export default ({ userUid, firstLoginCards }) => {
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
-  const writeDatabase = (data) => database.ref(`users/${userUid}`).update(data);
-  const onSubmit = (data) => (writeDatabase(data));
+  const writeDatabase = (data) => (
+    database.ref(`users/${userUid}`).update(data)
+  );
+
+  const onSubmit = (data) => writeDatabase(data);
   const createInput = (...inputs) => (
     <form onSubmit={handleSubmit(onSubmit)}>
       {inputs.map((input) => (<StyledInput key={input} className="modalInputs" name={input} placeholder={input} ref={register} />))}

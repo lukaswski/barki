@@ -17,7 +17,7 @@ export default () => (
           - najczęściej zadawane pytania
         </StyledFooterRow>
         <StyledFooterRow className="subtitle">lub jeśli nie znajdziesz odpowiedzi</StyledFooterRow>
-        <StyledFooterRow>Kontakt do mnie!</StyledFooterRow>
+        <StyledFooterRow>Napisz do mnie!</StyledFooterRow>
         <FormTypes />
       </Col>
     </Container>

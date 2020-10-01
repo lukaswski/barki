@@ -30,13 +30,19 @@ export default ({ userDataValue }) => {
             )}
           <Switch>
             <Route path={`${path}/user-profile`}>
-              <UserProfile />
+              <UserProfile 
+                userDataValue={userDataValue}
+                />
             </Route>
             <Route path={`${path}/dog-profile`}>
-              <DogProfil />
+              <DogProfil
+                userDataValue={userDataValue}
+              />
             </Route>
             <Route path={`${path}/all-history`}>
-              <AllHistory />
+              <AllHistory 
+                userDataValue={userDataValue}
+                />
             </Route>
             <Route exact path={path}>
               <Row>

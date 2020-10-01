@@ -4,6 +4,7 @@ import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
 import DashboardMainCard from './DashboardComponents/MainDashboard';
+import Footer from '../Footer';
 
 export default () => {
   const { userData } = useContext(LoginContext);

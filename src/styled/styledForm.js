@@ -28,7 +28,7 @@ export const StyledInput = styled.input`
   width: 100%;
   margin-top: 30px;
     :focus {
-      background-color: whitesmoke;
+      border-bottom: #5bc0de 1px solid;
       outline: none;
     }
     &.password{
@@ -57,15 +57,15 @@ export const StyledJumbotron = styled(Jumbotron)`
   width: 49%;
   float: left;
   padding-bottom: 10px;
-  &.first{
+  &.userProfile{
     width:100%;
   };
-  &.third{
+  &.collarProfile{
     margin-left: 2%;
   };
   @media(max-width: 768px){
     width:100%;
-    &.third{
+    &.dogProfile{
     margin-left: 0;
   }
 `;
@@ -80,8 +80,8 @@ export const StyledTextarea = styled.textarea`
   width: 100%;
   margin-top: 30px;
     :focus {
-      background-color: whitesmoke;
       outline: none;
+      border-bottom: #5bc0de 1px solid;
     }
     &.password{
       margin-bottom: 50px;

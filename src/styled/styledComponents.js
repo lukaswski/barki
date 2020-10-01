@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, Row } from 'react-bootstrap';
+import { Button, Row, Card } from 'react-bootstrap';
 import hero from '../img/hero.jpg';
 import heroMed from '../img/heroMed.jpg';
 import heroMobile from '../img/heroMobile.jpg';
@@ -156,4 +156,8 @@ width: 100%;
         padding: 220px 10% 0 10%;
     }
   }
+`;
+
+export const StyledSettingsCard = styled(Card)`
+  margin-top: 25px;
 `;

@@ -6,7 +6,7 @@ export const LoginProvider = (props) => {
   const [user, setUser] = useState({});
   const [userData, setUserData] = useState({});
 
-  const writeDatabase = (name, email, uid, firstLogin) => {
+const writeDatabase = (name, email, uid, firstLogin) => {
     database.ref(`users/${uid}`).update({
       name,
       email,

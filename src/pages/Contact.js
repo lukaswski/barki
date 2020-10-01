@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Container, Fade } from 'react-bootstrap';
+import { Container, Fade, Col, Row } from 'react-bootstrap';
 import Footer from './Footer';
 
 export default () => {
@@ -7,9 +7,21 @@ export default () => {
   return (
     <Fade in appear>
       <div>
-        <Container>
-          <h2>Kontakt do mnie!</h2>
-        </Container>
+        <Container >
+          <Row className="mt-4">
+            <Col>
+            <h3>Poznajmy się!</h3>
+            <article>
+              Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa, zapraszam do kontaktu bezpośrednio mailem lub złap mnie na messendżerze, chętnie wymienię się doświadczeniami.
+              <Row className="justify-content-md-center mt-5">
+                wski.lukas@gmail.com
+                facebook 
+              </Row>
+            </article>
+            </Col>
+    </Row>
+          
+            </Container>
         {MemoizedFooter}
       </div>
     </Fade>
