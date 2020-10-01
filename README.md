@@ -5,15 +5,15 @@ Barki to wibracyjna obroża antyszczekowa dla psów, wykorzystująca podzespoły
 Prace hardwearowe oraz softwearowe dzieją się równolegle, deploy gotowej pierwszej werji aplikacji planowany jest na 1.11.2020
 
 #### Wykorzystane biblioteki software
-  -React.js
-  -Router
-  -Eslint
-  -React bootstrap
-  -Styled Components
-  -Firebase daatabase
-  -Firebase Firestore 
-  -React Hook Form
-  -FullCalendar
+  - React.js
+  - Router
+  - Eslint
+  - React bootstrap
+  - Styled Components
+  - Firebase daatabase
+  - Firebase Firestore 
+  - React Hook Form
+  - FullCalendar
   
 #### Wykorzystane podzespoły hardware
   - wemos d1 mini
