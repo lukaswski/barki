@@ -3,8 +3,8 @@ import {
   Button, Card, InputGroup, FormControl, Alert, Collapse,
 } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { LoginContext } from '../../../../contexts/LoginContext';
 import { database } from '../../../../firebase/firebaseConfig';
+import { LoginContext } from '../../../../contexts/LoginContext';
 import { StyledSettingsCard } from '../../../../styled/styledComponents';
 
 const writeDatabase = (data, uid) => {
@@ -14,21 +14,24 @@ const writeDatabase = (data, uid) => {
 };
 
 export default ({
-  subtitle, title, dataValue, userDataValue,
+  title, dataValue, userDataValue,
 }) => {
   const { user, userData } = useContext(LoginContext);
   const [userValue, setUserValue] = user;
-  const { dogName, dogAge, dogRace } = userDataValue;
-  console.log(typeof (dogName));
-  const TitleDisplay = (data) => (data === `dogName` && dogName) || (data === 'dogAge' && dogAge) || (data === 'dogRace' && dogRace);
+  const {
+    dogName, dogAge, dogRace, country,
+  } = userDataValue;
+
+  const TitleDisplay = (data) => Object.keys(userDataValue).map((value) => (value === data && userDataValue[data]));
 
   const {
     register, handleSubmit, errors,
   } = useForm();
   const onSubmit = (data) => {
     writeDatabase(data, userValue.uid);
+    alert('zmieniono pomyślnie');
   };
-  console.log(dataValue);
+
   return (
     <StyledSettingsCard className="text-center">
       <Card.Header>{title}</Card.Header>

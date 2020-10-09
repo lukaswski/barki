@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Container, Row, Col, Button,
+  Container, Row, Col,
 } from 'react-bootstrap';
 import { StyledFooter, StyledFooterRow } from '../styled/styledComponents';
 import { facebookIcon, githubIcon, mailIcon } from '../img/iconsSVG/iconsSvg';
@@ -21,7 +21,7 @@ export default () => (
         <FormTypes />
       </Col>
     </Container>
-    <StyledFooterRow className="ownerInfo">
+    <StyledFooterRow className="ownerInfo mt-5">
       Projekt strony oraz wykonanie:
       {' '}
       <br />
