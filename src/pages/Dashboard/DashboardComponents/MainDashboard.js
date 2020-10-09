@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Row, Col, Button, Fade,
+  Row, Col, Button, Fade, Jumbotron
 } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
@@ -8,7 +8,6 @@ import {
 import { BackgroundContainer } from '../../../styled/styledDashboard';
 import DogInformation from './DogInformation';
 import Calendar from './Calendar';
-import Notification from './Notification';
 import BarkHistory from './BarkHistory';
 import DogProfil from './nestedComponents/DogProfil';
 import AllHistory from './nestedComponents/AllHistory';
@@ -75,18 +74,13 @@ export default ({ userDataValue }) => {
                 </Col>
               </Row>
               <Row>
-                <Col>
-                  <hr />
-                  <Notification />
-                </Col>
-              </Row>
-              <Row>
                 <BarkHistory
                   url={url}
                 />
               </Row>
             </Route>
           </Switch>
+              <Jumbotron fluid>footer</Jumbotron>
         </BackgroundContainer>
       </Fade>
     </>
