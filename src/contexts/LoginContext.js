@@ -22,7 +22,7 @@ const writeDatabase = (name, email, uid, firstLogin) => {
 
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged((data) => setUser({
-      name: data?.displayName,
+      name: data.displayName,
       email: data.email,
       uid: data.uid,
     },

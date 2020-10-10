@@ -12,18 +12,9 @@ export default () => {
         <Container>
           <Row className="mt-4">
             <Col className="mt-4">
-              <h3>Poznajmy się!</h3>
+              <h3>Ile kosztuje obroża?</h3>
               <article>
                 Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa, zapraszam do kontaktu bezpośrednio mailem lub złap mnie na messendżerze, chętnie wymienię się doświadczeniami.
-                <hr />
-                <Row className="mt-5">
-                  <Col>
-                    <Button variant="link" block href="https://www.facebook.com/lukas.wski">Facebook</Button>
-                  </Col>
-                  <Col>
-                    <Button variant="link" block href="mailto:wski.lukas@gmail.com">napisz do mnie maila</Button>
-                  </Col>
-                </Row>
               </article>
             </Col>
           </Row>

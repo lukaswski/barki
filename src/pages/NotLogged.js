@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Fade, Spinner, Row, Button,
+  Fade, Spinner, Row, Button, Container,
 } from 'react-bootstrap';
 import { NotLoggedBackground, NotLoggedText, StyledLink } from '../styled/styledComponents';
 
 export default ({ setRegisterButton }) => {
   const [spinner, setSpinner] = useState(
-    <Row className="justify-content-md-center">
-      <Spinner animation="border" variant="info" />
-    </Row>,
+    <Container>
+      <Row className="d-flex justify-content-center">
+        <Spinner animation="border" variant="info" />
+      </Row>
+    </Container>,
   );
 
   useEffect(() => {
@@ -33,15 +35,14 @@ export default ({ setRegisterButton }) => {
             </Button>
           </StyledLink>
         </NotLoggedText>
-      </NotLoggedBackground>), 1500);
+      </NotLoggedBackground>,
+    ), 2000);
     return (clearTimeout());
   }, []);
   return (
 
     <Fade in appear>
-
       {spinner}
-
     </Fade>
   );
 };

@@ -7,10 +7,9 @@ import { HERO_CONTENT } from '../utilities/textContent';
 import Footer from './Footer';
 
 export default () => {
-  const [fadeIn, setFadeIn] = useState(true);
   const { title, subtitle, tooltip, button } = HERO_CONTENT;
   return (
-    <Fade in={fadeIn} appear>
+    <Fade in appear>
       <div>
         <StyledHero>
           <Col md={{ span: 6, offset: 5 }}>

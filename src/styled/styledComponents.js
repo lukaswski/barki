@@ -10,6 +10,15 @@ import Footer from '../img/Footer.jpg';
 import FooterMid from '../img/FooterMid.jpg';
 import FooterMobile from '../img/FooterMobile.jpg';
 
+export const Styledtext = styled.div`
+  color:grey;
+  font-style: italic;
+  font-size: 14px;
+    &.dogInformation{
+    display: inline;
+    font-size: 16px;
+  }  
+`
 export const StyledLink = styled(Link)`
   color: dimgray;
   margin: 10px 1rem;

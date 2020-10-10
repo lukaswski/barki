@@ -18,9 +18,6 @@ export default ({
 }) => {
   const { user, userData } = useContext(LoginContext);
   const [userValue, setUserValue] = user;
-  const {
-    dogName, dogAge, dogRace, country,
-  } = userDataValue;
 
   const TitleDisplay = (data) => Object.keys(userDataValue).map((value) => (value === data && userDataValue[data]));
 

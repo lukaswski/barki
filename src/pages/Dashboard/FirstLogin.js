@@ -8,9 +8,7 @@ import { StyledJumbotron, StyledInput, StyledButton } from '../../styled/styledF
 import ModalForm from '../../utilities/ModalForm';
 
 export default ({ userUid, firstLoginCards }) => {
-  const {
-    register, handleSubmit, watch, errors,
-  } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const writeDatabase = (data) => (
     database.ref(`users/${userUid}`).update(data)
   );
@@ -18,7 +16,15 @@ export default ({ userUid, firstLoginCards }) => {
   const onSubmit = (data) => writeDatabase(data);
   const createInput = (...inputs) => (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {inputs.map((input) => (<StyledInput key={input} className="modalInputs" name={input} placeholder={input} ref={register} />))}
+      {inputs.map((input) => (
+        <StyledInput
+          key={input}
+          className="modalInputs"
+          name={input}
+          placeholder={input}
+          ref={register({ required: true })}
+        />
+      ))}
       <StyledButton type="submit" variant="outline-success" block>Zapisz informację</StyledButton>
     </form>
   );

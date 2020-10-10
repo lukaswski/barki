@@ -17,6 +17,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import ErrorPage from './pages/ErrorPage';
 import LoginPage from './pages/Login/LoginPage';
 import Contact from './pages/Contact';
+import Prices from './pages/Prices';
 import NotLogged from './pages/NotLogged';
 import Rules from './pages/Rules';
 import Faq from './pages/Faq';
@@ -43,6 +44,7 @@ function Root() {
           <Nav className="mr-auto">
             <StyledLink to="/about" onClick={() => setExpanded(false)}>O obroży</StyledLink>
             <StyledLink to="/contact" onClick={() => setExpanded(false)}>Kontakt</StyledLink>
+            <StyledLink to="/prices" onClick={() => setExpanded(false)}>Cennik</StyledLink>
           </Nav>
           <Form inline>
             <StyledLink to="/dashboard" onClick={() => setExpanded(false)}>Moja obroża</StyledLink>
@@ -74,6 +76,9 @@ function Root() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/prices">
+          <Prices />
         </Route>
         <Route path="/rules">
           <Rules />

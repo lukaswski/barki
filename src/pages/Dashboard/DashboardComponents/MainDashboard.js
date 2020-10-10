@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  Row, Col, Button, Fade, Jumbotron } from 'react-bootstrap';
+  Row, Col, Button, Fade, Jumbotron, Spinner,
+} from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
 } from 'react-router-dom';
@@ -11,6 +12,7 @@ import BarkHistory from './BarkHistory';
 import DogProfil from './nestedComponents/DogProfil';
 import AllHistory from './nestedComponents/AllHistory';
 import UserProfile from './nestedComponents/UserProfile';
+import { Styledtext } from '../../../styled/styledComponents';
 
 export default ({ userDataValue }) => {
   const { path, url } = useRouteMatch();
@@ -28,9 +30,9 @@ export default ({ userDataValue }) => {
             )}
           <Switch>
             <Route path={`${path}/user-profile`}>
-              <UserProfile 
+              <UserProfile
                 userDataValue={userDataValue}
-                />
+              />
             </Route>
             <Route path={`${path}/dog-profile`}>
               <DogProfil
@@ -38,9 +40,9 @@ export default ({ userDataValue }) => {
               />
             </Route>
             <Route path={`${path}/all-history`}>
-              <AllHistory 
+              <AllHistory
                 userDataValue={userDataValue}
-                />
+              />
             </Route>
             <Route exact path={path}>
               <Row>
@@ -49,8 +51,16 @@ export default ({ userDataValue }) => {
                   sm={{ span: 4, offset: 0 }}
                   xs={{ span: 5, offset: 0 }}
                 >
-                  <h5>{userDataValue.userName}</h5>
-                  {' '}
+                  {userDataValue.userName ? (
+                    <div>
+                      <h5>
+                        {userDataValue.userName}
+                      </h5>
+                      <Styledtext onClick={() => navigator.clipboard.writeText(userDataValue.uid)}>
+                        {userDataValue.uid}
+                      </Styledtext>
+                    </div>
+                  ) : <Spinner animation="border" variant="info" />}
                 </Col>
                 <Col
                   md={{ span: 1, offset: 6 }}
@@ -79,7 +89,7 @@ export default ({ userDataValue }) => {
               </Row>
             </Route>
           </Switch>
-              <Jumbotron fluid>footer</Jumbotron>
+          <Jumbotron fluid>footer</Jumbotron>
         </BackgroundContainer>
       </Fade>
     </>
