@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
 export default () => {
-  const handleDateClick = (arg) => {
-    alert(arg.dateStr);
-  };
+  const [date, setDate] = useState({});
   const select = (info) => {
-    alert(`selected ${info.startStr} to ${info.endStr}`);
+    setDate({
+      startDate: info.startStr,
+      endDate: info.endStr
+    });
   };
-
+console.log(date)
   return (
     <FullCalendar
       plugins={[dayGridPlugin, interactionPlugin]}
@@ -25,7 +26,6 @@ export default () => {
         center: 'title',
         right: 'today',
       }}
-      dateClick={handleDateClick}
       select={select}
     />
   );

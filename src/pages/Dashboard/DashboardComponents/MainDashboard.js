@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  Row, Col, Button, Fade, Jumbotron
-} from 'react-bootstrap';
+  Row, Col, Button, Fade, Jumbotron } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
 } from 'react-router-dom';
