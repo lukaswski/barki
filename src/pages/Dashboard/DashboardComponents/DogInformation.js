@@ -6,12 +6,22 @@ import { Link } from 'react-router-dom';
 import { Styledtext } from '../../../styled/styledComponents';
 import { dotsIcon } from '../../../img/iconsSVG/iconsSvg';
 
+const spinnerOnWait = (value, txt) => (value ? (
+  <div>
+    {txt}
+    <Styledtext className="dogInformation">
+      {' '}
+      {value}
+    </Styledtext>
+  </div>
+) : <Spinner animation="border" size="sm" variant="info" />);
+
 export default ({
   userDataValue: {
     dogName, dogAge, dogRace, serialNumber,
   }, url,
 }) => (
-  <Card border="light">
+  <Card border="light" className="mt-5">
     <Card.Header>
       <Row>
         <Col md={{ span: 7, offset: 0 }} sm={{ span: 7, offset: 0 }} xs={{ span: 7, offset: 0 }}>
@@ -25,26 +35,11 @@ export default ({
     </Card.Header>
     <Card.Body>
       <div>
-        {dogAge ? (
-          <div>
-            wiek:
-            <Styledtext className="dogInformation" > {dogAge}</Styledtext> 
-          </div>
-        ) : <Spinner animation="border" size="sm" variant="info" />}
+        {spinnerOnWait(dogAge, 'wiek:')}
         <hr />
-        {dogRace ? (
-          <div>
-            rasa:
-           <Styledtext className="dogInformation" > {dogRace}</Styledtext> 
-          </div>
-        ) : <Spinner animation="border" size="sm" variant="info" />}
+        {spinnerOnWait(dogRace, 'rasa:')}
         <hr />
-        {serialNumber ? (
-          <div>
-            numer seryjny obroży:
-           <Styledtext className="dogInformation" > {serialNumber}</Styledtext> 
-          </div>
-        ) : <Spinner animation="border" size="sm" variant="info" />}
+        {spinnerOnWait(serialNumber, 'numer seryjny:')}
       </div>
     </Card.Body>
   </Card>

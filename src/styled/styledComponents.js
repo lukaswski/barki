@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, Row, Card } from 'react-bootstrap';
+import { Button, Row, Card, Jumbotron, Container } from 'react-bootstrap';
 import hero from '../img/hero.jpg';
 import heroMed from '../img/heroMed.jpg';
 import heroMobile from '../img/heroMobile.jpg';
@@ -9,6 +9,52 @@ import notLoggedMobile from '../img/notLoggedMobile.jpg';
 import Footer from '../img/Footer.jpg';
 import FooterMid from '../img/FooterMid.jpg';
 import FooterMobile from '../img/FooterMobile.jpg';
+import FooterDogs from '../img/FooterDogs.jpg';
+
+export const StyledHomeContainer = styled(Container)`
+  padding-top: 80px;
+  height: 600px;
+  margin-top: 0px;
+  background-color: #E3F2FD;
+  opacity: 0.85;
+    &.about {
+      height: 400px;
+      background-color: white;
+      text-align: center;
+      padding:  10% 20%;
+    }
+    &.assets {
+      height: 500px;
+      background-color: #ffffff;
+      background-image: linear-gradient(180deg, #ffffff 1%, #b1fdfd 66%);
+      text-align: center;
+      @media(max-width: 570px){
+        height: 1200px;
+    }
+      @media(max-width: 768px){
+        height: 1000px;
+    }
+      @media(max-width: 470px){
+        height: 1200px;
+    }
+    }
+    &.howItWorks{
+      margin-top: 120px;
+      margin-top: 0px;
+
+      height: 800px;
+      background-color: #ffd4d8;
+      background-image: linear-gradient(180deg, #ffd4d8 0%, #ffffff 100%);
+    }
+    &.callToAction{
+      height: 600px;
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
+      background-attachment: fixed;
+      background-image: url('${FooterDogs}');
+    }
+`;
 
 export const Styledtext = styled.div`
   color:grey;
@@ -18,7 +64,8 @@ export const Styledtext = styled.div`
     display: inline;
     font-size: 16px;
   }  
-`
+`;
+
 export const StyledLink = styled(Link)`
   color: dimgray;
   margin: 10px 1rem;
@@ -122,9 +169,8 @@ export const HeroButton = styled(Button)`
 `;
 
 export const StyledFooter = styled.div`
-  margin-top: 50px;
   width:100%;
-  height: 850px;
+  height: 800px;
   background-image: url('${Footer}');
   background-size: cover;
       @media(max-width: 1000px){
