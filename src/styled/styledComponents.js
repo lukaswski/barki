@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, Row, Card, Jumbotron, Container } from 'react-bootstrap';
-import hero from '../img/hero.jpg';
+import { Button, Row, Col, Card, Jumbotron, Container, Image } from 'react-bootstrap';
+import hero from '../img/hero.png';
 import heroMed from '../img/heroMed.jpg';
 import heroMobile from '../img/heroMobile.jpg';
 import NotLogged from '../img/notLogged.jpg';
@@ -18,18 +18,24 @@ export const StyledHomeContainer = styled(Container)`
   background-color: #E3F2FD;
   opacity: 0.85;
     &.about {
-      height: 400px;
+      height: 300px;
+      background-color: white;
+      text-align: center;
+      padding:  10% 20%;
+    }
+    &.lastCallToAction {
+      height: 600px;
       background-color: white;
       text-align: center;
       padding:  10% 20%;
     }
     &.assets {
-      height: 500px;
-      background-color: #ffffff;
-      background-image: linear-gradient(180deg, #ffffff 1%, #b1fdfd 66%);
+      height: 600px;
+      background: rgb(255,255,255);
+      background: linear-gradient(180deg, rgba(255,255,255,0.804359243697479) 5%, rgba(243,246,251,1) 26%, rgba(232,239,247,1) 41%, rgba(232,239,247,1) 55%, rgba(229,237,246,1) 77%, rgba(216,228,242,1) 94%);
       text-align: center;
       @media(max-width: 570px){
-        height: 1200px;
+        height: 1300px;
     }
       @media(max-width: 768px){
         height: 1000px;
@@ -41,19 +47,71 @@ export const StyledHomeContainer = styled(Container)`
     &.howItWorks{
       margin-top: 120px;
       margin-top: 0px;
-
-      height: 800px;
-      background-color: #ffd4d8;
-      background-image: linear-gradient(180deg, #ffd4d8 0%, #ffffff 100%);
+      height: 1000px;
+      background-color: white;
+        @media(max-width: 1000px){
+          height: 1200px;
+            }
+        @media(max-width: 768px){
+          height: 1600px;
+            }
+        @media(max-width: 570px){
+          height: 1700px;
+            }
+        @media(max-width: 475px){
+          height: 1800px;
+            }
+        @media(max-width: 365px){
+          height: 2000px;
+            }
     }
     &.callToAction{
       height: 600px;
-      background-position: center; /* Center the image */
-      background-repeat: no-repeat; /* Do not repeat the image */
-      background-size: cover; /* Resize the background image to cover the entire container */
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: cover; 
       background-attachment: fixed;
       background-image: url('${FooterDogs}');
     }
+`;
+
+export const StyledDogImage = styled(Image)`
+    border-radius: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    opacity: 0.9;
+    height: 200px;
+    
+      &.num{
+         opacity: 0.2;
+      };
+      &.numYelow{
+        opacity: 0.2;
+      };
+}`;
+
+export const NumberHolderColumn = styled(Col)`
+  @media(max-width: 768px){
+    height: 80px;
+  }
+`;
+
+export const StyledColumnText = styled(Col)`
+    font-size: 24px;
+    padding-top: 20px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto; 
+   
+      &.yelowDog{
+        text-align: right;
+        @media(max-width: 768px){
+        text-align: left;
+        font-size: 24px;
+  }
+      }
 `;
 
 export const Styledtext = styled.div`
@@ -123,8 +181,8 @@ export const NotLoggedText = styled.div`
 `;
 
 export const StyledHero = styled.div`
-  width: 100%;
-  height: 90vh;
+  width:100vw;
+  height: 100vh;
   background-size: cover;
   background-image: url('${hero}');
     @media(max-width: 1000px){
@@ -134,38 +192,42 @@ export const StyledHero = styled.div`
       background-image: url('${heroMobile}');
     }
 `;
-export const HeroSlogan = styled.div`
-  height: 40vh;
-  padding-top: 20vh;
-  margin-bottom: 20px;
-  padding-bottom: 0;
-  text-shadow: 10px 10px 20px dimgrey;
-  color:white;
-  font-size: 3.0rem;
-   @media(max-width: 780px){
-      padding-top: 30px;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
+export const HeroSlogan = styled.h1`
+  color: white; 
+  font-size: 55px;
+  margin-top: 200px;
+  text-align: right;
+  text-shadow: 5px 10px 5px black;
+    @media(max-width: 850px){
+       margin-top: 60px;
+       font-size: 45px;
     }
-   @media(max-width: 500px){
-      padding-top: 60px;
-      text-align: center;
-    }
-    @media(max-width: 300px){
-      font-size: 2.0rem;
+    @media(max-width: 350px){
+       font-size: 2em;
     }
 `;
 
-export const HeroButton = styled(Button)`
-  width: 100%;
-  opacity: 90%;
-  margin-top: 90px;
-  box-shadow: 10px 10px 20px dimgrey;
-    @media(max-width: 850px){
-      margin-top: 160px;
-      text-align: center;
+export const StyledButton = styled(Button)`
+  width: 50%;
+  margin: 300px auto;
+    &.hero{
+      width:30%;
+      position: relative;
+      left: 200px;
+      margin-top: 100px;
+      box-shadow: 5px 10px 25px black;
+      @media(max-width: 850px){
+      position: inherit;
+      width: 70%;
+      margin-top: 350px;
     }
-  
+      @media(max-width: 350px){
+        margin-top: 400px;
+    }
+  }   
+  @media(max-width: 850px){
+      margin: 100px auto;
+    }
 `;
 
 export const StyledFooter = styled.div`

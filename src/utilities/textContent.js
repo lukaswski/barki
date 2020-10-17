@@ -32,8 +32,7 @@ export const DASHBOARD_CARD_CONTENT = [{
 }];
 
 export const HERO_CONTENT = {
-  title: 'Wibracyjna obroża antyszczekowa',
-  subtitle: 'Skutecznie oduczy szczekania oraz wycia podczas Twojej nieobecności w mieszkaniu',
+  title: 'Jedyna skuteczna obroża antyszczekowa',
   tooltip: 'Testowy dostęp do aplikacji bez logowania!',
   button: 'przetestuj',
 };

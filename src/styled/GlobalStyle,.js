@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body {
    margin: 0;
    box-shadow: ${(props) => (props.shadow ? '10 10 20 dimgrey' : null)};
-   font-family: Helvetica, sans-serif;
+   font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
   }
 
   h1{
