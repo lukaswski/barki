@@ -38,7 +38,7 @@ function Root() {
   return (
     <Router>
       <Navbar expand="lg" variant="light" expanded={expanded}>
-        <StyledLink to="/" className="logo" onClick={() => setExpanded(false)}>Barki collar</StyledLink>
+        <StyledLink to="/" className="logo" onClick={() => setExpanded(false)}>Barki Collar</StyledLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : 'expanded')} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

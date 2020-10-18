@@ -35,10 +35,10 @@ export const StyledHomeContainer = styled(Container)`
       padding:  10% 20%;
     }
     &.about {
-      height: 600px;
+      height: 650px;
       background-color: white;
       text-align: center;
-      width: 80%;
+      width: 100%;
       padding:  10% 20%;
       opacity: 1;
     }
