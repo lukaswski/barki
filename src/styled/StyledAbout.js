@@ -1,12 +1,23 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Container, Fade, Row, Col, Image } from 'react-bootstrap';
 
 export const StyledImage = styled(Image)`
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-`
+  margin-top: 60px;
+    &.barkFrontFlat{
+      width: 80%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;  
+    };
+    &.barkiLeft{
+        width: 100%; 
+        margin-top: 10px;
+      }
+    &.barkiIdea{
+      width: 85%;
+    }
+  };
+`;
 
 export const StyledTextCol = styled(Col)`
   text-align: center;
@@ -14,4 +25,4 @@ export const StyledTextCol = styled(Col)`
    &.priority{
     padding-top: 5%;
    }
-`
+`;

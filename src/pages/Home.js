@@ -6,11 +6,13 @@ import {
   wifiIcon, wibrationIcon, houseIcon, calendarIcon,
 } from '../img/iconsSVG/iconsSvg';
 import {
-  StyledHero, HeroSlogan, HeroButton, StyledButton, StyledHomeContainer, NumberHolderColumn,
+  StyledHero, HeroSlogan, StyledButton, StyledHomeContainer, NumberHolderColumn, 
   StyledDogImage, StyledColumnText,
 } from '../styled/styledComponents';
+import { StyledImage } from '../styled/StyledAbout';
 import { HERO_CONTENT } from '../utilities/textContent';
 import Footer from './Footer';
+import barkFrontFlat from '../img/barkiFrontFlat.png';
 import yelowDog from '../img/yelowDog.jpg';
 import blueDog from '../img/blueDog.jpg';
 import redDog from '../img/redDog.jpg';
@@ -20,7 +22,7 @@ import num3 from '../img/num3.jpg';
 
 export default () => {
   const {
-    title, subtitle, tooltip, button,
+    title, tooltip, button,
   } = HERO_CONTENT;
   return (
     <Fade in appear>
@@ -42,8 +44,9 @@ export default () => {
 
         <StyledHomeContainer fluid className="about">
           <Row className="justify-content-center">
-            <h2>O obroży Barki</h2>
+            <h2>O obroży Barki:</h2>
           </Row>
+          <StyledImage className="barkFrontFlat" src={barkFrontFlat} rounded />
           <Row className="text-align-center">
             <article>
               Pierwsza obroża, która łącząc się z domową siecią wi-fi

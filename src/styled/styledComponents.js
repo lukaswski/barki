@@ -17,11 +17,30 @@ export const StyledHomeContainer = styled(Container)`
   margin-top: 0px;
   background-color: #E3F2FD;
   opacity: 0.85;
-    &.about {
-      height: 300px;
+    &.ownConstruction{
+      opacity: 1;
+      height: 550px;
+      background-color: white;
+      text-align: center;
+      width: 70%;
+      @media(max-width: 991px){
+        width: 100%;
+      }
+    }
+    &.barkiCardboard{
+      opacity: 1;
+      height: 1250px;
       background-color: white;
       text-align: center;
       padding:  10% 20%;
+    }
+    &.about {
+      height: 600px;
+      background-color: white;
+      text-align: center;
+      width: 80%;
+      padding:  10% 20%;
+      opacity: 1;
     }
     &.lastCallToAction {
       height: 600px;
@@ -181,7 +200,7 @@ export const NotLoggedText = styled.div`
 `;
 
 export const StyledHero = styled.div`
-  width:100vw;
+  width:100%;
   height: 100vh;
   background-size: cover;
   background-image: url('${hero}');

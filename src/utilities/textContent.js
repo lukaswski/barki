@@ -69,3 +69,6 @@ export const FAQ_ACCORDION_CONTENT = [
     answer: 'Tego niestety nikt nie wie, wywnioskujesz to po statystykach w aplikacji',
   },
 ];
+
+export const PRICES = [{ id: 1, price: ' 30zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków w schroniskach Dziękujemy!' },
+{ id: 2, price: ' 50zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków oraz maty termiczne na długie zimowe wieczory!' }];

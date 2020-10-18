@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import {
-  Container, Fade, Col, Row, Button,
+  Container, Fade, Col, Row, Alert, Button,
 } from 'react-bootstrap';
 import Footer from './Footer';
+import { BackgroundCol } from '../styled/StyledPrices';
+import { PRICES } from '../utilities/textContent';
 
 export default () => {
   const MemoizedFooter = useMemo(() => <Footer />);
@@ -11,14 +13,48 @@ export default () => {
       <div>
         <Container>
           <Row className="mt-4">
-            <Col className="mt-4">
-              <h3>Ile kosztuje obroża?</h3>
-              <article>
-                Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa, zapraszam do kontaktu bezpośrednio mailem lub złap mnie na messendżerze, chętnie wymienię się doświadczeniami.
-              </article>
-            </Col>
+            <h1>Ile kosztuje obroża?</h1>
           </Row>
-
+          <Row className="mt-5">
+            <Col md>
+              <Container>
+                <h3>
+                  Będziesz w szoku ponieważ kupując obrożę Barki
+                  <b> pomagasz psom w schroniskach.</b>
+                </h3>
+                <p>
+                  Cena skłąda się z kosztu części oraz przesyłki + datek na schronisko w
+                  <b> wybranej przez Ciebie kwocie.</b>
+                </p>
+              </Container>
+              {PRICES.map(({ price, content, id }) => (
+                <Alert key={id} variant="light">
+                  <Alert.Heading>
+                    Datek w wysokości
+                    <b>
+                      {price}
+                    </b>
+                  </Alert.Heading>
+                  <p>
+                    {content}
+                  </p>
+                  <hr />
+                  <div className="d-flex justify-content-end">
+                    <Alert>
+                      Cena podstawowa
+                      <b> 50zł </b>
+                      plus
+                      {' '}
+                      <Button variant="outline-success">
+                        datek w wysokości <b>{price}</b>
+                      </Button>
+                    </Alert>
+                  </div>
+                </Alert>
+              ))}
+            </Col>
+            <BackgroundCol md />
+          </Row>
         </Container>
         {MemoizedFooter}
       </div>
