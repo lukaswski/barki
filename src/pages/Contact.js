@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import {
-  Container, Fade, Col, Row, Button,
+  Container, Fade, Col, Row, Button, Image
 } from 'react-bootstrap';
-import { StyledContainer } from '../styled/StyledContact'; 
+import { StyledContainer, StyledCol } from '../styled/StyledContact'; 
 import Footer from '../components/Footer';
+import contactPug from '../img/contactPug.png'
 
 export default () => {
   const MemoizedFooter = useMemo(() => <Footer />);
@@ -11,25 +12,25 @@ export default () => {
     <Fade in appear>
       <div>
         <StyledContainer>
-          <Row className="mt-4">
-            <Col className="mt-4">
+
+            <Col  md={{ span: 5, offset: 5 }}>
               <h3>Poznajmy się!</h3>
+              <hr />
               <p>
                 Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa,
-                zapraszam do kontaktu bezpośrednio mailem lub złap mnie na messendżerze,
-                chętnie wymienię się doświadczeniami.
-                <hr />
-                <Row className="mt-5">
-                  <Col>
-                    <Button variant="outline-info" block href="https://www.facebook.com/lukas.wski">Facebook</Button>
+                zapraszamy do kontaktu bezpośrednio mailem lub poprzez kontakt na messendżerze,
+                chętnie wymienimy się doświadczeniami.
+              </p>
+                <Row md className="mt-5">
+                  <Col sm className="mb-3">
+                    <Button variant="outline-info" block href="https://www.facebook.com/lukas.wski">facebook</Button>
                   </Col>
-                  <Col>
-                    <Button variant="outline-danger" block href="mailto:wski.lukas@gmail.com">napisz do mnie maila</Button>
+                  <Col sm>
+                    <Button variant="outline-danger" block href="mailto:wski.lukas@gmail.com">e-mail</Button>
                   </Col>
                 </Row>
-              </p>
+              <StyledCol>Gdy tylko znajdziemy trochę czasu odpowiemy najszybciej jak to możliwe.</StyledCol>
             </Col>
-          </Row>
 
         </StyledContainer>
         {MemoizedFooter}
