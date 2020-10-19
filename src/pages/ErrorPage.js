@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Container } from 'react-bootstrap';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 export default () => {
   const MemoizedFooter = useMemo(() => <Footer />);

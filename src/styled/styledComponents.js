@@ -19,7 +19,7 @@ export const StyledHomeContainer = styled(Container)`
   opacity: 0.85;
     &.ownConstruction{
       opacity: 1;
-      height: 550px;
+      height: 650px;
       background-color: white;
       text-align: center;
       width: 70%;
@@ -35,7 +35,7 @@ export const StyledHomeContainer = styled(Container)`
       padding:  10% 20%;
     }
     &.about {
-      height: 650px;
+      height: 100%;
       background-color: white;
       text-align: center;
       width: 100%;

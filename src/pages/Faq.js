@@ -3,7 +3,8 @@ import {
   Container, Accordion, Card, Jumbotron,
 } from 'react-bootstrap';
 import { FAQ_SITE_CONTENT, FAQ_ACCORDION_CONTENT } from '../utilities/textContent';
-import Footer from './Footer';
+import Footer from '../components/Footer';
+import TestItBarComponent from '../components/TestItBarComponent';
 
 const { title, subtitle } = FAQ_SITE_CONTENT;
 
@@ -31,6 +32,7 @@ export default () => (
         ))}
       </Accordion>
     </Container>
+    <TestItBarComponent />
     <Footer />
   </>
 );

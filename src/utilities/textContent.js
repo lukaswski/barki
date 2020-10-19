@@ -1,4 +1,7 @@
-// eslint-disable-next-line import/prefer-default-export
+import {
+  wifiIcon, wibrationIcon, houseIcon, calendarIcon,
+} from '../img/iconsSVG/iconsSvg';
+
 export const DASHBOARD_CARD_CONTENT = [{
   head: 'Pierwsze logowanie',
   content: 'Wygląda na to, że jesteś tu po raz pierwszy!',
@@ -56,7 +59,7 @@ export const FAQ_ACCORDION_CONTENT = [
   {
     key: '2',
     question: 'Czy poradzę sobie z konfiguracją?',
-    answer: 'Obroża jest przygotowana do używania, bateria jest naładowana - jedyne co trzeba to zarejestrować się w aplikacji oraz połączyć obroże z internetem domowym co jest wyjaśnione w dołączonej instrukcji obsługi',
+    answer: 'Zdecydowanie Tak! zarejestruj się w aplikacji oraz połącz obroże z internetem domowym co jest dokładnie wyjaśnione w dołączonej instrukcji obsługi',
   },
   {
     key: '3',
@@ -68,7 +71,29 @@ export const FAQ_ACCORDION_CONTENT = [
     question: 'Jak długo pies oducza się szczekania?',
     answer: 'Tego niestety nikt nie wie, wywnioskujesz to po statystykach w aplikacji',
   },
+  {
+    key: '5',
+    question: 'Czy samodzielnie mogę wybrać schronisko?',
+    answer: 'W standardzie to my decydujemy, które schroniska otrzymają wsparcie, ale jeśli masz w swojej okolicy potrzebujące schronisko - napisz do nas o tym, z pewnością pomożemy i to nie jeden raz',
+  },
+  {
+    key: '6',
+    question: 'Skąd mam pewność, że obroża działa gdy nie ma aktywności w aplikacji',
+    answer: 'Obroża monitoruje zachowanie psa, jeśli pies nie szczeka od 3 dni mając obroże - w aktywnościach pojawi się licznik dni określający od ilu dni obroża nie zarejestrowała szczeknięć ani wycia',
+  },
+  {
+    key: '7',
+    question: 'Jak włączyć obrożę?',
+    answer: 'Obroża po włożeniu bateri zasilających ustawia się w trybie konfiguracji. Należy wyszukać ją jako sieć wifi - uzupełnić w niej dane ID z aplikacji Barki, określić sieć wi-fi z którą ma się łączyć i wuala! Gotowa obroża czeka na szczeknięcia',
+  },
 ];
 
-export const PRICES = [{ id: 1, price: ' 30zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków w schroniskach Dziękujemy!' },
-{ id: 2, price: ' 50zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków oraz maty termiczne na długie zimowe wieczory!' }];
+export const PRICES = [
+  { id: 1, price: ' 50zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków w schroniskach Dziękujemy!' },
+  { id: 2, price: ' 100zł', content: ' Dzięki Twojemu datkowi jesteśmy w stanie sfonansować karmę dla psiaków oraz maty termiczne na długie zimowe wieczory!' }];
+
+export const DIFFERENCE_CONTENT = [
+  { name: 'Tylko wibracje', icon: wibrationIcon, paragraph: 'Gdy pies zaczyna szczekać lub wyć, jego zachowanie korygują silne wibracje, które są w 100% bezpieczne' },
+  { name: 'Spokój sąsiadów', icon: houseIcon, paragraph: 'Otrzymywanie listów do skrzynki, skarżenie się na Twojego psa we wspólnocie/spółdzielni to już przeszłość' },
+  { name: 'Kalendarz zdarzeń', icon: calendarIcon, paragraph: 'Pełna historia zdarzeń w kalendarzu, nic Ci nie umknie - wiesz ile razy i o której godzinie nastąpiło uspokajanie psa' },
+  { name: 'Dostęp online', icon: wifiIcon, paragraph: 'Jedyna obroża, łącząca się z domowąsiecią Wi-fi do przekazywania tobie informacji na żywo o zachowaniu psa'}];

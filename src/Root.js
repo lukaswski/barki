@@ -43,8 +43,8 @@ function Root() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <StyledLink to="/about" onClick={() => setExpanded(false)}>O obroży</StyledLink>
-            <StyledLink to="/contact" onClick={() => setExpanded(false)}>Kontakt</StyledLink>
             <StyledLink to="/prices" onClick={() => setExpanded(false)}>Cennik</StyledLink>
+            <StyledLink to="/contact" onClick={() => setExpanded(false)}>Kontakt</StyledLink>
           </Nav>
           <Form inline>
             <StyledLink to="/dashboard" onClick={() => setExpanded(false)}>Moja obroża</StyledLink>
@@ -58,7 +58,6 @@ function Root() {
           </StyledLink>
         </Navbar.Collapse>
       </Navbar>
-
       <Switch>
         <Route exact strict path="/">
           <Home />

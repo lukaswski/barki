@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import {
   Container, Fade, Col, Row, Alert, Button,
 } from 'react-bootstrap';
-import Footer from './Footer';
+import Footer from '../components/Footer';
+import TestItBarComponent from '../components/TestItBarComponent';
 import { BackgroundCol } from '../styled/StyledPrices';
 import { PRICES } from '../utilities/textContent';
 
@@ -46,7 +47,9 @@ export default () => {
                       plus
                       {' '}
                       <Button variant="outline-success">
-                        datek w wysokości <b>{price}</b>
+                        datek w wysokości
+                        {' '}
+                        <b>{price}</b>
                       </Button>
                     </Alert>
                   </div>
@@ -56,6 +59,7 @@ export default () => {
             <BackgroundCol md />
           </Row>
         </Container>
+        <TestItBarComponent />
         {MemoizedFooter}
       </div>
     </Fade>
