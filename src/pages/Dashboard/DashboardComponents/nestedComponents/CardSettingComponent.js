@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Button, Card, InputGroup, FormControl, Alert, Collapse,
 } from 'react-bootstrap';
@@ -18,19 +18,29 @@ export default ({
 }) => {
   const { user, userData } = useContext(LoginContext);
   const [userValue, setUserValue] = user;
+  const [show, setShow] = useState(false);
+  const [openCallopse, setOpenCallopse] = useState(false);
 
-  const TitleDisplay = (data) => Object.keys(userDataValue).map((value) => (value === data && userDataValue[data]));
+  const TitleDisplay = (data) => (
+    Object.keys(userDataValue)
+      .map((value) => (value === data && userDataValue[data])));
 
   const {
     register, handleSubmit, errors,
   } = useForm();
   const onSubmit = (data) => {
     writeDatabase(data, userValue.uid);
-    alert('zmieniono pomyślnie');
+    setShow(true);
+    setOpenCallopse(!openCallopse);
   };
 
   return (
     <StyledSettingsCard className="text-center">
+      <Collapse in={openCallopse}>
+        <Alert show={show} variant="success">
+          <Alert.Heading>Zmieniono poprawnie!</Alert.Heading>
+        </Alert>
+      </Collapse>
       <Card.Header>{title}</Card.Header>
       <Card.Body>
         <Card.Title><h3>{TitleDisplay(dataValue)}</h3></Card.Title>

@@ -12,7 +12,6 @@ export default () => {
     <Fade in appear>
       <div>
         <StyledContainer>
-
             <Col  md={{ span: 5, offset: 5 }}>
               <h3>Poznajmy się!</h3>
               <hr />
@@ -31,7 +30,6 @@ export default () => {
                 </Row>
               <StyledCol>Gdy tylko znajdziemy trochę czasu odpowiemy najszybciej jak to możliwe.</StyledCol>
             </Col>
-
         </StyledContainer>
         {MemoizedFooter}
       </div>
