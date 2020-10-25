@@ -6,10 +6,10 @@ import CardSettingComponent from './CardSettingComponent';
 
 export default ({ userDataValue, userDataValue: { userName } }) => {
   const userValues = Object.keys(userDataValue)
-    .filter((value) => !value.includes('dog') && !value.includes('uid') && !value.includes('name') && !value.includes('firstLogin'))
+    .filter((value) => !value.includes('dog') && !value.includes('uid') && !value.includes('name') && !value.includes('barking'))
     .map((value) => ({ name: value, title: `zmień ${value}` }))
     .reverse();
-
+ 
   return (
     <Fade in appear>
       <Container>
@@ -33,7 +33,8 @@ export default ({ userDataValue, userDataValue: { userName } }) => {
                 <Spinner animation="border" variant="info" />
               </Row>
             </Container>
-          )}
+          )
+          }
       </Container>
     </Fade>
   );

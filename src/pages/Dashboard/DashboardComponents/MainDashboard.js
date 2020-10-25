@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Row, Col, Button, Fade, Spinner,
+  Row, Col, Button, Fade, Spinner, Alert, Badge,
 } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
@@ -14,8 +14,25 @@ import AllHistory from './nestedComponents/AllHistory';
 import UserProfile from './nestedComponents/UserProfile';
 import { Styledtext } from '../../../styled/styledComponents';
 
-export default ({ userDataValue }) => {
+export default ({ userDataValue, userDataValue: { barking } }) => {
+  const [displayDate, setDisplayDate] = useState();
   const { path, url } = useRouteMatch();
+
+  const allBarks = barking && Object.values(barking)
+    .sort()
+    .reverse()
+    .map((barkTime) => (
+      <Alert key={barkTime} variant="warning">
+        Wykryto szczekanie dnia:
+        {' '}
+        {new Date(barkTime).toJSON().slice(0, 10)}
+        {' '}
+        o godzinie:
+        {' '}
+        <Badge variant="warning">{new Date(barkTime).toJSON().slice(11, 16)}</Badge>
+      </Alert>
+    ));
+
   return (
     <>
       <Fade in appear>
@@ -84,6 +101,7 @@ export default ({ userDataValue }) => {
               </Row>
               <Row>
                 <BarkHistory
+                  allBarks={allBarks}
                   url={url}
                 />
               </Row>

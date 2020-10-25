@@ -3,6 +3,7 @@ import { Fade } from 'react-bootstrap';
 import { LoginContext } from '../../contexts/LoginContext';
 import FirstLogin from './FirstLogin';
 import { DASHBOARD_CARD_CONTENT } from '../../utilities/textContent';
+import { BarkProvider } from '../../contexts/BarkContext';
 import DashboardMainCard from './DashboardComponents/MainDashboard';
 
 export default () => {
@@ -24,7 +25,7 @@ export default () => {
 
   return (
     <Fade in appear>
-      <div>
+      <BarkProvider>
         {firstLoginCards.length > 0
           ? (
             <FirstLogin
@@ -38,7 +39,7 @@ export default () => {
               userDataValue={userDataValue}
             />
           )}
-      </div>
+      </BarkProvider>
     </Fade>
   );
 };

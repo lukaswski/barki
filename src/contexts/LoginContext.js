@@ -16,8 +16,9 @@ const writeDatabase = (name, email, uid, firstLogin) => {
   };
 
   const readDatabase = async (name, uid) => {
-    await database.ref(`users/${uid}`).on('value', (snapshot) => setUserData(snapshot.val()),
+      const data = await database.ref(`users/${uid}`).on('value', (snapshot) => setUserData(snapshot.val()),
       (error) => console.log(`Error: ${error.code}`));
+      return data;
   };
 
   useEffect(() => {
@@ -29,7 +30,6 @@ const writeDatabase = (name, email, uid, firstLogin) => {
     writeDatabase(data.displayName, data.email, data.uid, true),
     readDatabase(data.displayName, data.uid)));
     return () => unsubscribe();
-    
   }, []);
 
   return (
