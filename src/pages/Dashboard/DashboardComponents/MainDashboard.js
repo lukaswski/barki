@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Row, Col, Button, Fade, Jumbotron, Spinner,
+  Row, Col, Button, Fade, Spinner,
 } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
@@ -89,7 +89,6 @@ export default ({ userDataValue }) => {
               </Row>
             </Route>
           </Switch>
-          <Jumbotron fluid>footer</Jumbotron>
         </BackgroundContainer>
       </Fade>
     </>
