@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 export const BarkContext = createContext();
 export const BarkProvider = (props) => {
-  const [bark, setBark] = useState('iinini');
+  const [bark, setBark] = useState([]);
 
   return (
     <BarkContext.Provider value={[bark, setBark]}>

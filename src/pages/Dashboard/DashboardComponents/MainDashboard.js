@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
-  Row, Col, Button, Fade, Spinner, Alert, Badge,
+  Row, Col, Button, Fade, Spinner, Alert, Badge, Collapse,
 } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
 } from 'react-router-dom';
 import { BackgroundContainer } from '../../../styled/styledDashboard';
+import { StyledAlertHistory } from '../../../styled/styledHisory';
 import DogInformation from './DogInformation';
+import { BarkContext } from '../../../contexts/BarkContext';
 import Calendar from './Calendar';
 import BarkHistory from './BarkHistory';
 import DogProfil from './nestedComponents/DogProfil';
@@ -15,22 +17,20 @@ import UserProfile from './nestedComponents/UserProfile';
 import { Styledtext } from '../../../styled/styledComponents';
 
 export default ({ userDataValue, userDataValue: { barking } }) => {
-  const [displayDate, setDisplayDate] = useState();
+  const [ bark, setBark ] = useContext(BarkContext);
   const { path, url } = useRouteMatch();
 
   const allBarks = barking && Object.values(barking)
+    .map((singleBark) => new Date(singleBark).toJSON())
+    .filter((singleDate) => singleDate.slice(0, 10) === bark)
     .sort()
     .reverse()
     .map((barkTime) => (
-      <Alert key={barkTime} variant="warning">
-        Wykryto szczekanie dnia:
-        {' '}
-        {new Date(barkTime).toJSON().slice(0, 10)}
-        {' '}
-        o godzinie:
+      <StyledAlertHistory key={barkTime} variant="warning">
+        Wykryto szczekanie o godzinie:
         {' '}
         <Badge variant="warning">{new Date(barkTime).toJSON().slice(11, 16)}</Badge>
-      </Alert>
+      </StyledAlertHistory>
     ));
 
   return (
@@ -58,6 +58,7 @@ export default ({ userDataValue, userDataValue: { barking } }) => {
             </Route>
             <Route path={`${path}/all-history`}>
               <AllHistory
+                barking={barking}
                 userDataValue={userDataValue}
               />
             </Route>
@@ -96,13 +97,18 @@ export default ({ userDataValue, userDataValue: { barking } }) => {
                   />
                 </Col>
                 <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
-                  <Calendar />
+                  <Calendar 
+                    allBarks={allBarks}
+                    
+                  />
                 </Col>
               </Row>
               <Row>
                 <BarkHistory
                   allBarks={allBarks}
                   url={url}
+                  bark={bark}
+                  barking={barking}
                 />
               </Row>
             </Route>

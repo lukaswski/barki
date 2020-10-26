@@ -38,7 +38,7 @@ export default ({
     <StyledSettingsCard className="text-center">
       <Collapse in={openCallopse}>
         <Alert show={show} variant="success">
-          <Alert.Heading>Zmieniono poprawnie!</Alert.Heading>
+          Zmieniono poprawnie!
         </Alert>
       </Collapse>
       <Card.Header>{title}</Card.Header>
