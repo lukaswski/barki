@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Alert } from 'react-bootstrap';
 import { StyledButton, StyledInput } from '../../styled/styledForm';
 import { passwordReset } from '../../firebase/firebaseConfig';
 
 const ResetPasswordModal = (props) => {
   const [PaswordValue, setPaswordValue] = useState();
+  const [alert, setAlert] = useState(false);
 
   const handleResetPassword = (e) => setPaswordValue(e.target.value);
-
+  const handleSubmitReset = () => (
+    passwordReset(PaswordValue),
+    setAlert(true)
+    );
   return (
     <Modal
       {...props}
@@ -24,10 +28,11 @@ const ResetPasswordModal = (props) => {
         <div>
           Podaj adres na który chcesz otrzymać link do resetowania hasła
         </div>
+        {alert && <Alert variant="success">Na podany poniżej adres wysłaliśmy link do resetowania hasła</Alert>}
         <StyledInput name="email" type="email" placeholder="email" onChange={handleResetPassword} className="passwordReset" />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => passwordReset(PaswordValue)} variant="warning">Resetuj</Button>
+        <Button onClick={handleSubmitReset} variant="warning">Resetuj</Button>
         <Button onClick={props.onHide} variant="outline-danger">Anuluj</Button>
       </Modal.Footer>
     </Modal>

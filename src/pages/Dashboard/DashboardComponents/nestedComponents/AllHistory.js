@@ -13,7 +13,7 @@ export default ({ barking }) => (
         .sort()
         .reverse()
         .map((barkTime) => (
-          <StyledAlertHistory key={barkTime} variant="warning">
+          <StyledAlertHistory key={barkTime} variant="secondary">
             Dnia
             {' '}
             <Badge variant="info">{new Date(barkTime).toJSON().slice(0, 10)}</Badge>
