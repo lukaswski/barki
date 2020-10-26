@@ -47,7 +47,7 @@ export default ({
         <form onSubmit={handleSubmit(onSubmit)}>
           <InputGroup className="mb-3">
             <FormControl
-              placeholder="zmień informację"
+              placeholder="wprowadź"
               aria-describedby="basic-addon2"
               ref={register({ required: true })}
               name={dataValue}
