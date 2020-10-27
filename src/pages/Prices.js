@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 import {
   Container, Fade, Col, Row, Alert, Button,
 } from 'react-bootstrap';
+import { BackgroundCol } from '../styled/styledPrices';
 import Footer from '../components/Footer';
 import TestItBarComponent from '../components/TestItBarComponent';
-import { BackgroundCol } from '../styled/StyledPrices';
 import { PRICES } from '../utilities/textContent';
 
 export default () => {

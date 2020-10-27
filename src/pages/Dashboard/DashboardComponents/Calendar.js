@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import FullCalendar from '@fullcalendar/react';
@@ -20,7 +20,6 @@ const StyleWrapper = styled.div`
   `;
 
 export default ({ allBarks }) => {
-  const [date, setDate] = useState();
   const [bark, setBark] = useContext(BarkContext);
 
   useEffect(() => {

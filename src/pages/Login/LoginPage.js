@@ -62,17 +62,17 @@ export default ({ registerButton }) => {
         {!registerButton ? (
           <div>
             <hr />
-            <label>
+            <div>
               <input type="checkbox" onChange={() => setRulesCheckbox(!rulesCheckbox)} />
               {' '}
               Wyrażam zgodę na przetważanie danych osobowych
-            </label>
-            <label>
+            </div>
+            <div>
               <input type="checkbox" onChange={() => setDataProcess(!dataProcessCheckbox)} />
               {' '}
               Oświadczam, iż zapoznałem się z regulaminem Barki Collar dostępnym
               <a href="/rules"> tutaj </a>
-            </label>
+            </div>
           </div>
         ) : (
           <div>

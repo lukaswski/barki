@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { StyledButton, StyledSpan, StyledInput,
-} from '../../styled/styledForm';
+import { StyledButton, StyledSpan, StyledInput } from '../../styled/styledForm';
 
-export default ({ name, submitButtonText, handleOnSubmit, registerAccess }) => {
+export default ({
+  name, submitButtonText, handleOnSubmit, registerAccess,
+}) => {
   const {
     register, handleSubmit, errors,
   } = useForm();

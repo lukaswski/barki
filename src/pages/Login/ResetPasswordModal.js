@@ -11,7 +11,7 @@ const ResetPasswordModal = (props) => {
   const handleSubmitReset = () => (
     passwordReset(PaswordValue),
     setAlert(true)
-    );
+);
   return (
     <Modal
       {...props}

@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import {
-  Container, Fade, Col, Row, Button, Image
+  Fade, Col, Row, Button,
 } from 'react-bootstrap';
-import { StyledContainer, StyledCol } from '../styled/StyledContact'; 
+import { StyledContainer, StyledCol } from '../styled/styledContact';
 import Footer from '../components/Footer';
-import contactPug from '../img/contactPug.png'
 
 export default () => {
   const MemoizedFooter = useMemo(() => <Footer />);
@@ -12,24 +11,27 @@ export default () => {
     <Fade in appear>
       <div>
         <StyledContainer>
-            <Col  md={{ span: 5, offset: 5 }}>
-              <h3>Poznajmy się!</h3>
-              <hr />
-              <p>
-                Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa,
-                zapraszamy do kontaktu bezpośrednio mailem lub poprzez kontakt na messendżerze,
-                chętnie wymienimy się doświadczeniami.
-              </p>
-                <Row md className="mt-5">
-                  <Col sm className="mb-3">
-                    <Button variant="outline-info" block href="https://www.facebook.com/lukas.wski">facebook</Button>
-                  </Col>
-                  <Col sm>
-                    <Button variant="outline-danger" block href="mailto:wski.lukas@gmail.com">e-mail</Button>
-                  </Col>
-                </Row>
-              <StyledCol>Gdy tylko znajdziemy trochę czasu odpowiemy najszybciej jak to możliwe.</StyledCol>
-            </Col>
+          <Col md={{ span: 5, offset: 5 }}>
+            <h3>Poznajmy się!</h3>
+            <hr />
+            <p>
+              Jeżeli chcesz porozmawiać na tematy związane z uciążliwym szczekaniem psa,
+              zapraszamy do kontaktu bezpośrednio mailem lub poprzez kontakt na messendżerze,
+              chętnie wymienimy się doświadczeniami.
+            </p>
+            <Row md className="mt-5">
+              <Col sm className="mb-3">
+                <Button variant="outline-info" block href="https://www.facebook.com/lukas.wski">facebook</Button>
+              </Col>
+              <Col sm>
+                <Button variant="outline-danger" block href="mailto:wski.lukas@gmail.com">e-mail</Button>
+              </Col>
+            </Row>
+            <StyledCol>
+              Gdy tylko znajdziemy trochę czasu odpowiemy
+              najszybciej jak to możliwe.
+            </StyledCol>
+          </Col>
         </StyledContainer>
         {MemoizedFooter}
       </div>

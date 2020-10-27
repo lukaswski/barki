@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import {
-  Row, Col, Button, Fade, Spinner, Alert, Badge, Collapse,
+  Row, Col, Button, Fade, Spinner, Badge,
 } from 'react-bootstrap';
 import {
   useRouteMatch, Link, Route, Switch, useLocation,
@@ -17,7 +17,7 @@ import UserProfile from './nestedComponents/UserProfile';
 import { Styledtext } from '../../../styled/styledComponents';
 
 export default ({ userDataValue, userDataValue: { barking } }) => {
-  const [ bark, setBark ] = useContext(BarkContext);
+  const [bark, setBark] = useContext(BarkContext);
   const { path, url } = useRouteMatch();
 
   const allBarks = barking && Object.values(barking)
@@ -97,7 +97,7 @@ export default ({ userDataValue, userDataValue: { barking } }) => {
                   />
                 </Col>
                 <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
-                  <Calendar 
+                  <Calendar
                     allBarks={allBarks}
                   />
                 </Col>

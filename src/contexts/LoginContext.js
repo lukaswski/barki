@@ -6,7 +6,7 @@ export const LoginProvider = (props) => {
   const [user, setUser] = useState({});
   const [userData, setUserData] = useState({});
 
-const writeDatabase = (name, email, uid, firstLogin) => {
+  const writeDatabase = (name, email, uid, firstLogin) => {
     database.ref(`users/${uid}`).update({
       name,
       email,
@@ -16,9 +16,9 @@ const writeDatabase = (name, email, uid, firstLogin) => {
   };
 
   const readDatabase = async (name, uid) => {
-      const data = await database.ref(`users/${uid}`).on('value', (snapshot) => setUserData(snapshot.val()),
+    const data = await database.ref(`users/${uid}`).on('value', (snapshot) => setUserData(snapshot.val()),
       (error) => console.log(`Error: ${error.code}`));
-      return data;
+    return data;
   };
 
   useEffect(() => {

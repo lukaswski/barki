@@ -8,7 +8,7 @@ import { StyledJumbotron, StyledInput, StyledButton } from '../../styled/styledF
 import ModalForm from '../../utilities/ModalForm';
 
 export default ({ userUid, firstLoginCards }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const writeDatabase = (data) => (
     database.ref(`users/${userUid}`).update(data)
   );
