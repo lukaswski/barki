@@ -90,7 +90,7 @@ export default ({ userDataValue, userDataValue: { barking } }) => {
               </Row>
               <hr />
               <Row>
-                <Col md={{ span: 6, offset: 0 }} xs={{ order: 'last' }}>
+                <Col md={{ span: 6, offset: 0 }}>
                   <DogInformation
                     userDataValue={userDataValue}
                     url={url}
@@ -99,11 +99,10 @@ export default ({ userDataValue, userDataValue: { barking } }) => {
                 <Col md={{ span: 6, offset: 0 }} xs={12} sm={12}>
                   <Calendar 
                     allBarks={allBarks}
-                    
                   />
                 </Col>
               </Row>
-              <Row>
+              <Row md={{ order: 'first' }}>
                 <BarkHistory
                   allBarks={allBarks}
                   url={url}

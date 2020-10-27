@@ -1,9 +1,23 @@
 import React, { useState, useContext, useEffect } from 'react';
+import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import FullCalendar from '@fullcalendar/react';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { BarkContext } from '../../../contexts/BarkContext';
+
+const StyleWrapper = styled.div`
+  .fc-daygrid-day-number {
+    color: gray;
+    text-decoration: none;
+    user-select: none; /* Chrome, Opera and Firefox */
+  }
+  .fc-col-header-cell-cushion {
+    color: black;
+    text-decoration: none;
+    user-select: none;
+  }
+  `;
 
 export default ({ allBarks }) => {
   const [date, setDate] = useState();
@@ -19,21 +33,23 @@ export default ({ allBarks }) => {
 
   return (
     <Container className="mt-5" fluid>
-      <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        themeSystem="bootstrap"
-        height={350}
-        locale="pl"
-        selectable="true"
-        unselectAuto="true"
-        headerToolbar={{
-          left: 'prev',
-          center: 'title',
-          right: 'today',
-        }}
-        select={select}
-      />
+      <StyleWrapper>
+        <FullCalendar
+          plugins={[dayGridPlugin, interactionPlugin]}
+          initialView="dayGridMonth"
+          themeSystem="bootstrap"
+          height={350}
+          locale="pl"
+          selectable="true"
+          navLinks={false}
+          unselectAuto="true"
+          headerToolbar={{
+            left: 'prev',
+            right: 'today',
+          }}
+          select={select}
+        />
+      </StyleWrapper>
     </Container>
   );
 };
