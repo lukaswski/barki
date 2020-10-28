@@ -14,7 +14,7 @@ export default ({ setRegisterButton }) => {
   );
 
   useEffect(() => {
-    setTimeout(() => setSpinner(
+  const timer = setTimeout(() => setSpinner(
       <NotLoggedBackground>
         <NotLoggedText>
           <NotLoggedText className="notLoggedTitle">
@@ -36,11 +36,11 @@ export default ({ setRegisterButton }) => {
           </StyledLink>
         </NotLoggedText>
       </NotLoggedBackground>,
-    ), 2000);
-    return (clearTimeout());
+    ), 2000)
+    return () => clearTimeout(timer);
   }, []);
-  return (
 
+  return (
     <Fade in appear>
       {spinner}
     </Fade>

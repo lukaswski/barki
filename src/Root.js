@@ -23,7 +23,7 @@ import Rules from './pages/Rules';
 import Faq from './pages/Faq';
 
 function Root() {
-  const { user, userData } = useContext(LoginContext);
+  const { user } = useContext(LoginContext);
   const [userValue, setUserValue] = user;
 
   const [registerButton, setRegisterButton] = useState(false);
@@ -35,6 +35,7 @@ function Root() {
     firebase.auth().signOut(),
     setRegisterButton(true)
   );
+
   return (
     <Router>
       <Navbar expand="lg" variant="light" expanded={expanded}>

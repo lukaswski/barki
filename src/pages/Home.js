@@ -6,7 +6,7 @@ import {
   StyledHero, HeroSlogan, StyledButton, StyledHomeContainer, NumberHolderColumn,
   StyledDogImage, StyledColumnText, StyledLink,
 } from '../styled/styledComponents';
-import { StyledImage } from '../styled/StyledAbout';
+import { StyledImage } from '../styled/styledAbout';
 import { HERO_CONTENT, DIFFERENCE_CONTENT } from '../utilities/textContent';
 import TestItBarComponent from '../components/TestItBarComponent';
 import Footer from '../components/Footer';
