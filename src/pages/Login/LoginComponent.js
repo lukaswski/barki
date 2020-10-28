@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { StyledButton, StyledSpan, StyledInput } from '../../styled/styledForm';
 
-export default ({
+const LoginComponent = ({
   name, submitButtonText, handleOnSubmit, registerAccess,
 }) => {
   const {
@@ -25,3 +25,5 @@ export default ({
     </div>
   );
 };
+
+export default React.memo(LoginComponent);

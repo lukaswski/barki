@@ -7,7 +7,7 @@ import { StyledFooter, StyledFooterRow } from '../styled/styledComponents';
 import { facebookIcon, githubIcon, mailIcon } from '../img/iconsSVG/iconsSvg';
 import FormTypes from '../utilities/FormTypes';
 
-export default () => (
+const Footer = () => (
   <StyledFooter>
     <Container>
       <Col md={{ span: 9, offset: 2 }} lg={{ span: 6, offset: 6 }}>
@@ -44,3 +44,5 @@ export default () => (
     </StyledFooterRow>
   </StyledFooter>
 );
+
+export default React.memo(Footer);

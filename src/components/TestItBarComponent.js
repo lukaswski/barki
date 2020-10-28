@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { StyledHomeContainer, StyledLink } from '../styled/styledComponents';
 
-export default () => (
+const CallToAction = () => (
   <StyledHomeContainer fluid className="lastCallToAction">
     <Row className="justify-content-center">
       <h2>Przetestuj na koncie demo</h2>
@@ -26,3 +26,5 @@ export default () => (
     </StyledLink>
   </StyledHomeContainer>
 );
+
+export default React.memo(CallToAction);

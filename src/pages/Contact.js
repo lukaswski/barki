@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import {
   Fade, Col, Row, Button,
 } from 'react-bootstrap';
@@ -6,7 +6,7 @@ import { StyledContainer, StyledCol } from '../styled/styledContact';
 import Footer from '../components/Footer';
 
 export default () => {
-  const MemoizedFooter = useMemo(() => <Footer />);
+
   return (
     <Fade in appear>
       <div>
@@ -33,7 +33,7 @@ export default () => {
             </StyledCol>
           </Col>
         </StyledContainer>
-        {MemoizedFooter}
+        <Footer />
       </div>
     </Fade>
   );
