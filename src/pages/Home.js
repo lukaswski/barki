@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Col, OverlayTrigger, Tooltip, Fade, Row, Button, Container, Badge,
+  Col, OverlayTrigger, Tooltip, Fade, Row, Button, Container,
 } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import {
@@ -38,7 +38,13 @@ export default () => {
             </Row>
             <Row className="text-align-center">
               <OverlayTrigger overlay={<Tooltip id="tooltip">{tooltip}</Tooltip>}>
-                <StyledButton className="hero" variant="warning" onClick={() => authByPassword('nb.no@op.pl', 'barkicollar').then(() => history.push('/dashboard'))}>{button}</StyledButton>
+                <StyledButton
+                  className="hero"
+                  variant="warning"
+                  onClick={() => authByPassword('nb.no@op.pl', 'barkicollar').then(() => history.push('/dashboard'))}
+                >
+                  {button}
+                </StyledButton>
               </OverlayTrigger>
             </Row>
           </Container>
