@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import Footer from '../components/Footer';
 import TestItBarComponent from '../components/TestItBarComponent';
-import { StyledImage, StyledTextCol } from './styledAbout';
+import { StyledImage, StyledTextCol } from '../styled/styledAbout';
 import { StyledHomeContainer } from '../styled/styledComponents';
 import barkiLeft from '../img/barkiLeft.png';
 import barkFrontFlat from '../img/barkiFrontFlat.png';
