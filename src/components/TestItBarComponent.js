@@ -1,8 +1,13 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { authByPassword } from '../firebase/firebaseConfig';
 import { StyledHomeContainer, StyledLink } from '../styled/styledComponents';
 
-const CallToAction = () => (
+
+const CallToAction = () => {
+  const history = useHistory();
+  return (
   <StyledHomeContainer fluid className="lastCallToAction">
     <Row className="justify-content-center">
       <h2>Przetestuj na koncie demo</h2>
@@ -17,7 +22,7 @@ const CallToAction = () => (
         i przekonaj się, że obroża Barki spełni Twoje oczekiwania
       </article>
     </Row>
-    <Button variant="outline-primary" className="mt-5" block onClick={() => alert('testujesz bez logowania')}>testuj bez logowania</Button>
+    <Button variant="outline-primary" className="mt-5" block onClick={() => authByPassword('nb.no@op.pl', 'barkicollar').then(() => history.push('/dashboard'))}>testuj bez logowania</Button>
     <Col className="m-1">lub:</Col>
     <StyledLink to="login" className="notLoggedLink">
       <Button block variant="success">
@@ -26,5 +31,6 @@ const CallToAction = () => (
     </StyledLink>
   </StyledHomeContainer>
 );
+  };
 
 export default React.memo(CallToAction);

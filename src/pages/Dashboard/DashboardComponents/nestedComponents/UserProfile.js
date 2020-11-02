@@ -6,7 +6,7 @@ import CardSettingComponent from './CardSettingComponent';
 
 export default ({ userDataValue, userDataValue: { userName } }) => {
   const userValues = Object.keys(userDataValue)
-    .filter((value) => !value.includes('dog') && !value.includes('uid') && !value.includes('name') && !value.includes('barking'))
+    .filter((value) => !value.includes('dog') && !value.includes('uid') && !value.includes('name') && !value.includes('barking') && !value.includes('firstLogin'))
     .map((value) => ({ name: value, title: `zmień ${value}` }))
     .reverse();
 

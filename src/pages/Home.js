@@ -2,10 +2,12 @@ import React from 'react';
 import {
   Col, OverlayTrigger, Tooltip, Fade, Row, Button, Container, Badge,
 } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import {
   StyledHero, HeroSlogan, StyledButton, StyledHomeContainer, NumberHolderColumn,
   StyledDogImage, StyledColumnText, StyledLink,
 } from '../styled/styledComponents';
+import { authByPassword } from '../firebase/firebaseConfig';
 import { StyledImage } from '../styled/styledAbout';
 import { HERO_CONTENT, DIFFERENCE_CONTENT } from '../utilities/textContent';
 import TestItBarComponent from '../components/TestItBarComponent';
@@ -19,6 +21,7 @@ import num2 from '../img/num2.jpg';
 import num3 from '../img/num3.jpg';
 
 export default () => {
+  const history = useHistory();
   const {
     title, tooltip, button,
   } = HERO_CONTENT;
@@ -35,7 +38,7 @@ export default () => {
             </Row>
             <Row className="text-align-center">
               <OverlayTrigger overlay={<Tooltip id="tooltip">{tooltip}</Tooltip>}>
-                <StyledButton className="hero" variant="warning" onClick={() => alert('testujesz bez logowania')}>{button}</StyledButton>
+                <StyledButton className="hero" variant="warning" onClick={() => authByPassword('nb.no@op.pl', 'barkicollar').then(() => history.push('/dashboard'))}>{button}</StyledButton>
               </OverlayTrigger>
             </Row>
           </Container>
