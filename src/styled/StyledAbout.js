@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Fade, Row, Col, Image } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 
 export const StyledImage = styled(Image)`
   margin-top: 60px;
