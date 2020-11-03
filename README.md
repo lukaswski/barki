@@ -1,5 +1,7 @@
 Eng below
 
+[Sprawdź aplikację](https://gracious-mcnulty-e57c10.netlify.app "Barki collar app")
+
 ### O projekcie
 Barki to wibracyjna obroża antyszczekowa dla psów, wykorzystująca podzespoły esp 8266 (wemos d1 mini), aplikację webową napisaną w React.js z wykorzystaniem konfiguracji CRA oraz bazę danych i autentykację użytkowników firebase. Dzięki obroży, Twój pies oduczy się szczekać oraz wyć podczas nieobecności w domu. Obroża pracuje w domowej sieci wifi, gdy zarejestruje wycie lub szczekanie, aktywuje się wibracja korygująca równocześnie wysyłając powiadomienie o zaistniałym zdarzeniu do aplikacji. 
 
@@ -26,6 +28,8 @@ Barki to wibracyjna obroża antyszczekowa dla psów, wykorzystująca podzespoły
 
 
 ## ENG
+
+[Check aplication](https://gracious-mcnulty-e57c10.netlify.app "Barki collar app")
 
 ### About project
 
