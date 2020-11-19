@@ -41,7 +41,7 @@ export default () => (
                 <div className="d-flex justify-content-end">
                   <Alert>
                       Cena podstawowa
-                      <b> 50zł </b>
+                      <b> 150zł </b>
                       plus
                       {' '}
                       <Button variant="outline-success">
