@@ -3,7 +3,7 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: 'AIzaSyAIkMPv8ruSXOHYyyJdj4d6gNjoh466Nlo',
   authDomain: 'silent-collar.firebaseapp.com',
   databaseURL: 'https://silent-collar.firebaseio.com',
   projectId: 'silent-collar',
