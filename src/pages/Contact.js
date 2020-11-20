@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Fade, Col, Row, Button,
 } from 'react-bootstrap';
-import { StyledContainer, StyledCol } from '../styled/styledContact';
 import Footer from '../components/Footer';
+import { StyledContainer, StyledCol } from '../styled/styled';
 
 export default () => {
 

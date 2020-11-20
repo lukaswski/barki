@@ -75,7 +75,7 @@ export default () => {
               <Col key={name} md>
                 <Col className="mb-5">{icon}</Col>
                 <div>
-                  <h3>{title}</h3>
+                  <h3>{name}</h3>
                   <p>
                     {paragraph}
                   </p>
