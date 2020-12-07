@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container, Fade, Col, Row, Alert, Button,
 } from 'react-bootstrap';
-import { BackgroundCol } from './styledPrices';
+import { BackgroundCol } from './StyledPrices';
 import Footer from '../components/Footer';
 import TestItBarComponent from '../components/TestItBarComponent';
 import { PRICES } from '../utilities/textContent';

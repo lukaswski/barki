@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Fade, Col, Row, Button,
 } from 'react-bootstrap';
-import { StyledContainer, StyledCol } from './styledContact';
+import { StyledContainer, StyledCol } from './StyledContact';
 import Footer from '../components/Footer';
 
 export default () => {
